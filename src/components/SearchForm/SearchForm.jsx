@@ -2,5 +2,16 @@ import React from "react";
 import "./SearchForm.css";
 
 export default function SearchForm() {
-    return <p>Hello World !</p>;
+    return (
+        <div className='search-form'>
+            <h2 className='search-form__title'>
+                What's going on in the world?
+            </h2>
+            <h3 className='search-form__subtitle'>
+                Find the latest news on any topic and save them in your personal
+                account.
+            </h3>
+            <div className='search-form__search'></div>
+        </div>
+    );
 }
