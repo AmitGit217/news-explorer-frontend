@@ -11,7 +11,10 @@ export default function SearchForm() {
                 Find the latest news on any topic and save them in your personal
                 account.
             </h3>
-            <div className='search-form__search'></div>
+            <div className='search-form__search'>
+                <input className='search-form__search-text' type='text' />
+                <button className='search-form__search-button' type='submit' />
+            </div>
         </div>
     );
 }
