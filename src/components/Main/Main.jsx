@@ -1,6 +1,6 @@
 import React from "react";
-import "./App.css";
+import "./Main.css";
 
-export default function App() {
+export default function Main() {
     return <p>Hello World !</p>;
 }

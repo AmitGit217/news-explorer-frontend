@@ -1,6 +1,6 @@
 import React from "react";
-import "./App.css";
+import "./About.css";
 
-export default function App() {
+export default function About() {
     return <p>Hello World !</p>;
 }

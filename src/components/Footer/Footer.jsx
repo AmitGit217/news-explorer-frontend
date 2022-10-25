@@ -1,6 +1,6 @@
 import React from "react";
-import "./App.css";
+import "./Footer.css";
 
-export default function App() {
+export default function Footer() {
     return <p>Hello World !</p>;
 }

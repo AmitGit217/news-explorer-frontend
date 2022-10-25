@@ -1,6 +1,6 @@
 import React from "react";
-import "./App.css";
+import "./NewsCard.css";
 
-export default function App() {
+export default function NewsCard() {
     return <p>Hello World !</p>;
 }
