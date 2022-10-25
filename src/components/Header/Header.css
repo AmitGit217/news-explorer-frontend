@@ -13,3 +13,19 @@
     font-weight: 700;
     font-size: 20px;
 }
+
+.header__nav {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    display: flex;
+}
+
+.header__button {
+    all: unset;
+}
+
+.header__home-button {
+    margin-right: 50px;
+}
