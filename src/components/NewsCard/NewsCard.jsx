@@ -11,11 +11,13 @@ export default function NewsCard({
 }) {
     return (
         <div className='news-card'>
-            <img src={image} alt={title} />
-            <p className='news-card__date'>{date}</p>
-            <h5 className='news-card__title'>{title}</h5>
-            <p className='news-card__text'>{text}</p>
-            <p className='news-card__source'>{source}</p>
+            <img className='news-card__image' src={image} alt={title} />
+            <div className='news-card__main'>
+                <p className='news-card__date'>{date}</p>
+                <h5 className='news-card__title'>{title}</h5>
+                <p className='news-card__text'>{text}</p>
+                <p className='news-card__source'>{source}</p>
+            </div>
             <span className='news-card__archive'>
                 <img
                     className={`news-card__archive-image ${

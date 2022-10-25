@@ -1,7 +1,10 @@
+.news-list {
+    padding-bottom: 80px;
+}
 .news-list__title {
-    all: unset;
     font-family: "Roboto Slab";
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
+    margin: 0 0 64px 0;
 }
