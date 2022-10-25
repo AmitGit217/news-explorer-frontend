@@ -7,12 +7,12 @@ import Top from "../Top/Top";
 
 export default function App() {
     return (
-        <>
+        <section className='app'>
             <Top />
             <Routes>
                 <Route path='/' element={<Main />} />
                 <Route path='/saved-news' element={<SavedNews />} />
             </Routes>
-        </>
+        </section>
     );
 }

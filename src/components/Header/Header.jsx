@@ -7,9 +7,14 @@ export default function Header() {
             <h1 className='header__title'>NewsExplorer</h1>
             <nav className='header__nav'>
                 <button
-                    className='header__button header__home-button header__button_active'
+                    className='header__button header__button-nav header__button_active'
                     type='button'>
                     Home
+                </button>
+                <button
+                    className='header__button header__button-nav'
+                    type='button'>
+                    Saved articles
                 </button>
                 <button
                     className='header__button header__signin-button'

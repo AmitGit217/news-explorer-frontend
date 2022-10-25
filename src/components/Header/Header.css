@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 10%;
+    padding: 0 5%;
     height: 80px;
     color: #ffffff;
     border-bottom: 1px #ffffff solid;
@@ -32,9 +32,15 @@
     cursor: pointer;
 }
 
-.header__home-button {
+.header__button-nav {
     margin-right: 50px;
     height: 100%;
+    color: #b6bcbf;
+    transition: 0.1s;
+}
+
+.header__button-nav:hover {
+    opacity: 0.6;
 }
 
 .header__signin-button {
@@ -51,4 +57,5 @@
 }
 .header__button_active {
     border-bottom: 3px #ffffff solid;
+    color: #ffffff;
 }
