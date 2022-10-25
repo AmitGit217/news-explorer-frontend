@@ -31,3 +31,48 @@
     line-height: 24px;
     color: #ffffff;
 }
+
+.search-form__search {
+    font-family: "Roboto";
+    font-style: normal;
+    position: relative;
+    width: 608px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-form__search-text {
+    border: unset;
+    outline: none;
+    flex-grow: 1;
+    border-radius: 100px;
+    padding: unset;
+    text-indent: 24px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.search-form__search-button {
+    cursor: pointer;
+    position: absolute;
+    width: 168px;
+    height: 64px;
+    background: #2f71e5;
+    box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+    border: unset;
+    border-radius: 100px;
+    right: -2px;
+    padding: unset;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 18px;
+    transition: 0.1s;
+}
+
+.search-form__search-button:hover {
+    background: #347eff;
+}
+.search-form__search-button:active {
+    background: #2a65cc;
+}

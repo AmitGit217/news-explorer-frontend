@@ -1,4 +1,6 @@
 .top {
     background-image: url(../../images/main-image.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
     padding-bottom: 80px;
 }

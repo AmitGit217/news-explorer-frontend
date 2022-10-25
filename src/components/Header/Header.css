@@ -43,6 +43,11 @@
     width: 180px;
     height: 50px;
     text-align: center;
+    transition: 0.1s;
+}
+
+.header__signin-button:hover {
+    background: #ffffff21;
 }
 .header__button_active {
     border-bottom: 3px #ffffff solid;

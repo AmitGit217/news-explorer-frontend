@@ -14,8 +14,14 @@ export default function SearchForm() {
                 </h3>
             </div>
             <div className='search-form__search'>
-                <input className='search-form__search-text' type='text' />
-                <button className='search-form__search-button' type='submit' />
+                <input
+                    className='search-form__search-text'
+                    type='text'
+                    placeholder='Enter topic'
+                />
+                <button className='search-form__search-button' type='submit'>
+                    Search
+                </button>
             </div>
         </div>
     );
