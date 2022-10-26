@@ -27,6 +27,7 @@ export default function SavedNews() {
                             title={article.title}
                             text={article.text}
                             source={article.source}
+                            keyword={article.keyword}
                         />
                     );
                 })}

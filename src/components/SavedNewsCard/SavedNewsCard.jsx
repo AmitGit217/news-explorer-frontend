@@ -2,8 +2,14 @@ import React from "react";
 import "./SavedNewsCard.css";
 import trash from "../../images/trash.svg";
 
-export default function SavedNewsCard({ title, text, date, image, source }) {
-    // Temporary state visualization before API connection
+export default function SavedNewsCard({
+    title,
+    text,
+    date,
+    image,
+    source,
+    keyword,
+}) {
     return (
         <div className='saved-news-card'>
             <img className='saved-news-card__image' src={image} alt={title} />
@@ -20,7 +26,7 @@ export default function SavedNewsCard({ title, text, date, image, source }) {
                     alt='archive'
                 />
             </span>
-            <p className='saved-news-card__keyword'></p>
+            <p className='saved-news-card__keyword'>{keyword}</p>
         </div>
     );
 }

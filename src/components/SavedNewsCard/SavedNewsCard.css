@@ -93,3 +93,19 @@
     background: #2f71e5;
     background-size: contain;
 }
+
+.saved-news-card__keyword {
+    all: unset;
+    position: absolute;
+    background: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 500;
+    left: 24px;
+    top: 24px;
+    padding: 10px 22px;
+}
