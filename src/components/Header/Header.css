@@ -30,6 +30,9 @@
 .header__button {
     all: unset;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header__button-nav {
