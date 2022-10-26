@@ -1,5 +1,8 @@
 import React from "react";
 import "./NewsCard.css";
+import archive from "../../images/archive-icon.svg";
+import archiveActive from "../../images/archive-icon_active.svg";
+import { useState } from "react";
 
 export default function NewsCard({
     title,
@@ -9,6 +12,8 @@ export default function NewsCard({
     source,
     isSaved,
 }) {
+    // Temporary state visualization before API connection
+    const [tempIsSaved, setTempIsSaved] = useState(false);
     return (
         <div className='news-card'>
             <img className='news-card__image' src={image} alt={title} />
@@ -20,11 +25,10 @@ export default function NewsCard({
             </div>
             <span className='news-card__archive'>
                 <img
-                    className={`news-card__archive-image ${
-                        isSaved ? "news-card__archive-image_saved" : null
-                    }`}
-                    src=''
-                    alt=''
+                    onClick={() => setTempIsSaved(!tempIsSaved)}
+                    className='news-card__archive-image '
+                    src={tempIsSaved ? archiveActive : archive}
+                    alt='archive'
                 />
             </span>
         </div>

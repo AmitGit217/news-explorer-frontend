@@ -37,6 +37,7 @@
     height: 100%;
     color: #b6bcbf;
     transition: 0.1s;
+    text-align: center;
 }
 
 .header__button-nav:hover {
