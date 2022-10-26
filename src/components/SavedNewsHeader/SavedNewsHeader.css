@@ -1,0 +1,57 @@
+.saved-news-header {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    height: 80px;
+    color: #1a1b22;
+    border-bottom: 1px #1a1b22 solid;
+}
+
+.saved-news-header__title {
+    all: unset;
+    font-family: "Roboto Slab";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.saved-news-header__nav {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.saved-news-header__button {
+    all: unset;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.saved-news-header__button-nav {
+    margin-right: 50px;
+    height: 100%;
+    color: #1a1b22;
+    transition: 0.1s;
+    text-align: center;
+}
+
+.saved-news-header__signin-button {
+    border: 1px solid #1a1b22;
+    border-radius: 100px;
+    width: 180px;
+    height: 50px;
+    text-align: center;
+    transition: 0.1s;
+}
+
+.saved-news-header__button_active {
+    border-bottom: 3px #1a1b22 solid;
+}
