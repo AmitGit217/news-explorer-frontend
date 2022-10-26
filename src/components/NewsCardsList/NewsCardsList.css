@@ -14,9 +14,9 @@
 }
 
 .news-list__articles {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 16px;
 }
 
 .news-list__show-more {

@@ -1,7 +1,7 @@
 import React from "react";
 import "./SavedNews.css";
 import SavedNewsCard from "../SavedNewsCard/SavedNewsCard";
-import news from "../../db/news-temp.js";
+import { savedNews } from "../../db/news-temp.js";
 
 export default function SavedNews() {
     return (
@@ -17,7 +17,7 @@ export default function SavedNews() {
                 </p>
             </div>
             <div className='saved-news__articles'>
-                {news.map((article, index) => {
+                {savedNews.map((article, index) => {
                     return (
                         <SavedNewsCard
                             isSaved={true}
