@@ -2,6 +2,8 @@
     padding-bottom: 80px;
     display: flex;
     flex-direction: column;
+    padding: 5%;
+    background: #f5f6f7;
 }
 .news-list__title {
     font-family: "Roboto Slab";

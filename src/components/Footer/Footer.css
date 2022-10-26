@@ -1,6 +1,6 @@
 .footer {
     font-family: "Roboto";
-    padding: 25px 10%;
+    padding: 30px 10% 0 10%;
     display: flex;
     justify-content: space-between;
 }

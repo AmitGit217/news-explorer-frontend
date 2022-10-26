@@ -1,6 +1,7 @@
 .about {
     display: flex;
     column-gap: 50px;
+    padding: 5%;
 }
 
 .about__main {
