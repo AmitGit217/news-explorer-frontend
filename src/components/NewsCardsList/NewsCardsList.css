@@ -12,10 +12,9 @@
 }
 
 .news-list__articles {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    row-gap: 50px;
-    column-gap: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .news-list__show-more {
