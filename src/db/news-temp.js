@@ -1,5 +1,6 @@
 const news = [
     {
+        keyword: "Nature",
         title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
         molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
@@ -27,6 +28,7 @@ const news = [
         image: "https://images.unsplash.com/photo-1666688090267-4858c2075629?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
     },
     {
+        keyword: "Yellowstone",
         title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
         molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
@@ -54,6 +56,7 @@ const news = [
         image: "https://images.unsplash.com/photo-1666688090267-4858c2075629?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
     },
     {
+        keyword: "Parks",
         title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
         molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
