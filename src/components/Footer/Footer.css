@@ -1,0 +1,17 @@
+.footer {
+    padding: 25px 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25%;
+}
+
+.footer__image {
+    height: 20px;
+    width: 20px;
+}

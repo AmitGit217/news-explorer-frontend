@@ -4,6 +4,7 @@ import Main from "../Main/Main";
 import SavedNews from "../SavedNews/SavedNews";
 import "./App.css";
 import Top from "../Top/Top";
+import Footer from "../Footer/Footer";
 
 export default function App() {
     return (
@@ -13,6 +14,7 @@ export default function App() {
                 <Route path='/' element={<Main />} />
                 <Route path='/saved-news' element={<SavedNews />} />
             </Routes>
+            <Footer />
         </section>
     );
 }
