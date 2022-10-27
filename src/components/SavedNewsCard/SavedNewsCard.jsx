@@ -1,6 +1,6 @@
 import React from "react";
 import "./SavedNewsCard.css";
-import trash from "../../images/trash.svg";
+import { useState } from "react";
 
 export default function SavedNewsCard({
     title,
@@ -10,6 +10,7 @@ export default function SavedNewsCard({
     source,
     keyword,
 }) {
+    const [removeIsOpen, setRemove] = useState(false);
     return (
         <div className='saved-news-card'>
             <img className='saved-news-card__image' src={image} alt={title} />
@@ -19,13 +20,25 @@ export default function SavedNewsCard({
                 <p className='saved-news-card__text'>{text}</p>
                 <p className='saved-news-card__source'>{source}</p>
             </div>
-            <span className='saved-news-card__archive'>
-                <img
-                    className='saved-news-card__archive-image '
-                    src={trash}
-                    alt='archive'
+            <span className='saved-news-card__trash'>
+                <button
+                    onClick={() => setRemove(!removeIsOpen)}
+                    type='button'
+                    className={`${
+                        removeIsOpen
+                            ? "saved-news-card__trash-image_active"
+                            : "saved-news-card__trash-image"
+                    }`}
                 />
             </span>
+
+            <p
+                className={`saved-news-card__remove-popup ${
+                    removeIsOpen && "saved-news-card__remove-popup_show"
+                }`}>
+                Remove from saved
+            </p>
+
             <p className='saved-news-card__keyword'>{keyword}</p>
         </div>
     );

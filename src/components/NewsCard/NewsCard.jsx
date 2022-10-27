@@ -1,7 +1,5 @@
 import React from "react";
 import "./NewsCard.css";
-import archive from "../../images/archive-icon.svg";
-import archiveActive from "../../images/archive-icon_active.svg";
 import { useState } from "react";
 
 export default function NewsCard({
@@ -24,11 +22,14 @@ export default function NewsCard({
                 <p className='news-card__source'>{source}</p>
             </div>
             <span className='news-card__archive'>
-                <img
+                <button
                     onClick={() => setTempIsSaved(!tempIsSaved)}
-                    className='news-card__archive-image '
-                    src={tempIsSaved ? archiveActive : archive}
-                    alt='archive'
+                    type='button'
+                    className={` ${
+                        tempIsSaved
+                            ? "news-card__archive-image_saved"
+                            : "news-card__archive-image"
+                    }`}
                 />
             </span>
         </div>
