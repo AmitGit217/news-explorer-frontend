@@ -1,0 +1,29 @@
+.popup__overlay {
+    position: absolute;
+    background: #0000005e;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+}
+
+.popup {
+    z-index: 2;
+    background: #ffffff;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    top: 15%;
+    left: 35%;
+    height: 380px;
+    width: 430px;
+    position: fixed;
+    border-radius: 16px;
+    box-sizing: border-box;
+    padding: 34px 36px 28px 36px;
+}
+
+.popup__title {
+    all: unset;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 900;
+}

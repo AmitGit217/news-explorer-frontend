@@ -1,6 +1,13 @@
 import React from "react";
 import "./PopupWithForm.css";
 
-export default function PopupWithForm() {
-    return <p>Hello World !</p>;
+export default function PopupWithForm({ title, children }) {
+    return (
+        <div className='popup__overlay'>
+            <div className='popup'>
+                <h6 className='popup__title'>{title}</h6>
+                {children}
+            </div>
+        </div>
+    );
 }
