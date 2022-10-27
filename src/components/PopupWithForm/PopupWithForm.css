@@ -66,6 +66,7 @@
 
 .popup__form-label {
     display: flex;
+    position: relative;
     flex-direction: column;
     font-family: Inter;
     font-size: 12px;
@@ -120,4 +121,12 @@
 .popup__form-nav_action {
     cursor: pointer;
     color: #2f71e5;
+}
+
+.popup__form-input_error {
+    all: unset;
+    font-size: 12px;
+    position: absolute;
+    bottom: -20px;
+    color: #ff0000;
 }

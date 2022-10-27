@@ -1,6 +1,5 @@
 import React from "react";
 import "./SavedNewsCard.css";
-import { useState } from "react";
 
 export default function SavedNewsCard({
     title,
@@ -10,7 +9,6 @@ export default function SavedNewsCard({
     source,
     keyword,
 }) {
-    const [removeIsOpen, setRemove] = useState(false);
     return (
         <div className='saved-news-card'>
             <img className='saved-news-card__image' src={image} alt={title} />
