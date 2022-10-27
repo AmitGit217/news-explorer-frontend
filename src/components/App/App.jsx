@@ -8,13 +8,14 @@ import Footer from "../Footer/Footer";
 import Signin from "../Signin/Signin";
 import { PopupContext } from "../../contexts/PopupContext";
 import { useState } from "react";
+import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
 export default function App() {
     const [popup, setPopup] = useState(false);
     return (
         <PopupContext.Provider value={{ popup, setPopup }}>
             <section className='app'>
-                <Signin />
+                <PopupWithForm children={<Signin />} title='Signin' />
                 <Top />
                 <Routes>
                     <Route path='/' element={<Main />} />

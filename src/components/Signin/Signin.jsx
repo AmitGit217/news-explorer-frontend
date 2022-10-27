@@ -1,7 +1,16 @@
 import React from "react";
-import PopupWithForm from "../PopupWithForm/PopupWithForm";
-import "./Signin.css";
 
 export default function Signin() {
-    return <PopupWithForm title='Signin'></PopupWithForm>;
+    return (
+        <div className='popup__form-labels'>
+            <label className='popup__form-label'>
+                Email:
+                <input className='popup__form-input' type='text' />
+            </label>
+            <label className='popup__form-label'>
+                Password:
+                <input className='popup__form-input' type='text' />
+            </label>
+        </div>
+    );
 }
