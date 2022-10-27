@@ -50,3 +50,29 @@
 .popup__exit:hover {
     opacity: 0.8;
 }
+
+.popup__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup__form-labels {
+    margin-top: 22px;
+    margin-bottom: 39px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.popup__form-label {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup__form-submit {
+    margin-bottom: 16px;
+}
+
+.popup__form-nav {
+    align-self: center;
+}
