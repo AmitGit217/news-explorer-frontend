@@ -1,6 +1,7 @@
 import React from "react";
 import "./SavedNewsHeader.css";
 import { Link } from "react-router-dom";
+import logoutIcon from "../../images/logout.svg";
 
 export default function SavedNewsHeader() {
     return (
@@ -17,11 +18,17 @@ export default function SavedNewsHeader() {
                     className='saved-news-header__button saved-news-header__button-nav saved-news-header__button_active'>
                     Saved articles
                 </Link>
-                <button
-                    className='saved-news-header__button saved-news-header__signin-button'
-                    type='button'>
-                    Sign in
-                </button>
+                <div className='saved-news-header__logout'>
+                    <button
+                        className='saved-news-header__button saved-news-header__logout-button'
+                        type='button'>
+                        Elise
+                    </button>
+                    <img
+                        className='saved-news-header__logout-icon'
+                        src={logoutIcon}
+                        alt='logout icon'></img>
+                </div>
             </nav>
         </header>
     );
