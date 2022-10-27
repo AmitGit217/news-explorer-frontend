@@ -6,18 +6,23 @@ import "./App.css";
 import Top from "../Top/Top";
 import Footer from "../Footer/Footer";
 import Signin from "../Signin/Signin";
+import { PopupContext } from "../../contexts/PopupContext";
+import { useState } from "react";
 
 export default function App() {
+    const [popup, setPopup] = useState(false);
     return (
-        <section className='app'>
-            <Signin />
-            <Top />
-            <Routes>
-                <Route path='/' element={<Main />} />
-                <Route path='/saved-news' element={<SavedNews />} />
-            </Routes>
+        <PopupContext.Provider value={{ popup, setPopup }}>
+            <section className='app'>
+                <Signin />
+                <Top />
+                <Routes>
+                    <Route path='/' element={<Main />} />
+                    <Route path='/saved-news' element={<SavedNews />} />
+                </Routes>
 
-            <Footer />
-        </section>
+                <Footer />
+            </section>
+        </PopupContext.Provider>
     );
 }
