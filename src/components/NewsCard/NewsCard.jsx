@@ -31,6 +31,9 @@ export default function NewsCard({
                             : "news-card__archive-image"
                     }`}
                 />
+                <p className='news-card__archive-popup'>
+                    Sign in to save articles
+                </p>
             </span>
         </div>
     );
