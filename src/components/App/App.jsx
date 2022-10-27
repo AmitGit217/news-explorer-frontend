@@ -15,7 +15,11 @@ export default function App() {
     return (
         <PopupContext.Provider value={{ popup, setPopup }}>
             <section className='app'>
-                <PopupWithForm children={<Signin />} title='Signin' />
+                <PopupWithForm
+                    children={<Signin />}
+                    title='Sign in'
+                    submitText='Sign in'
+                />
                 <Top />
                 <Routes>
                     <Route path='/' element={<Main />} />

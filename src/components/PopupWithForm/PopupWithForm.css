@@ -67,12 +67,57 @@
 .popup__form-label {
     display: flex;
     flex-direction: column;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    color: #2f71e5;
+    row-gap: 9px;
+}
+
+.popup__form-input {
+    all: unset;
+    cursor: pointer;
+    border-bottom: 1px solid #00000023;
+    padding: 1%;
+    color: #000000;
+}
+.popup__form-input:focus {
+    border-bottom: 1px solid #000000;
 }
 
 .popup__form-submit {
+    all: unset;
+    cursor: pointer;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
     margin-bottom: 16px;
+    height: 64px;
+    width: 360px;
+    border-radius: 100px;
+    background: #2f71e5;
+    box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
+    text-align: center;
+    color: #ffffff;
+    transition: 0.2s;
+}
+.popup__form-submit:hover {
+    background: #347eff;
+}
+.popup__form-submit:active {
+    background: #2a65cc;
 }
 
 .popup__form-nav {
     align-self: center;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.popup__form-nav_action {
+    cursor: pointer;
+    color: #2f71e5;
 }

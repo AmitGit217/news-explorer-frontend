@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { PopupContext } from "../../contexts/PopupContext";
 import "./PopupWithForm.css";
 
-export default function PopupWithForm({ title, children }) {
+export default function PopupWithForm({ title, submitText, children }) {
     const { popup, setPopup } = useContext(PopupContext);
 
     useEffect(() => {
@@ -23,10 +23,12 @@ export default function PopupWithForm({ title, children }) {
                 <h6 className='popup__title'>{title}</h6>
                 <form className='popup__form'>
                     {children}
-                    <button className='popup__form-submit' type='submit' />
+                    <button className='popup__form-submit' type='submit'>
+                        {submitText}
+                    </button>
                     <p className='popup__form-nav'>
                         or{" "}
-                        <span className='popup__form-nav_action'>Sign in</span>
+                        <span className='popup__form-nav_action'>Sign up</span>
                     </p>
                 </form>
             </div>
