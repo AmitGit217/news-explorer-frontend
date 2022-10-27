@@ -21,7 +21,6 @@
     border-radius: 16px;
     top: 15%;
     left: 35%;
-    height: 380px;
     width: 430px;
     border-radius: 16px;
     box-sizing: border-box;
@@ -54,6 +53,7 @@
 .popup__form {
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .popup__form-labels {
