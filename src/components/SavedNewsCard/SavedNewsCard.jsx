@@ -22,23 +22,13 @@ export default function SavedNewsCard({
             </div>
             <span className='saved-news-card__trash'>
                 <button
-                    onClick={() => setRemove(!removeIsOpen)}
                     type='button'
-                    className={`${
-                        removeIsOpen
-                            ? "saved-news-card__trash-image_active"
-                            : "saved-news-card__trash-image"
-                    }`}
+                    className='saved-news-card__trash-image'
                 />
+                <p className='saved-news-card__remove-popup'>
+                    Remove from saved
+                </p>
             </span>
-
-            <p
-                className={`saved-news-card__remove-popup ${
-                    removeIsOpen && "saved-news-card__remove-popup_show"
-                }`}>
-                Remove from saved
-            </p>
-
             <p className='saved-news-card__keyword'>{keyword}</p>
         </div>
     );

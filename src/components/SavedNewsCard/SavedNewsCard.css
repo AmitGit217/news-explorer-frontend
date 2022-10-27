@@ -93,7 +93,7 @@
     transition: 0.2s;
 }
 
-.saved-news-card__trash-image_active {
+.saved-news-card__trash-image:hover {
     all: unset;
     cursor: pointer;
     width: 18px;
@@ -131,15 +131,14 @@
     font-family: "Roboto";
     font-size: 12px;
     font-weight: 500;
-    top: 24px;
-    right: 69px;
+    right: 45px;
     height: 40px;
-    padding: 0 24px;
+    width: 159px;
     visibility: hidden;
     opacity: 0;
     transition: 0.2s;
 }
-.saved-news-card__remove-popup_show {
+.saved-news-card__trash-image:hover + .saved-news-card__remove-popup {
     visibility: visible;
     opacity: 1;
 }
