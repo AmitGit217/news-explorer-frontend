@@ -7,7 +7,7 @@ export default function Main() {
     return (
         <main className='main'>
             <NewsCardsList />
-            {/* <About /> */}
+            <About />
         </main>
     );
 }
