@@ -41,3 +41,17 @@
 .news-list__show-more:hover {
     background: #e8e8e8;
 }
+
+@media screen and (max-width: 425px) {
+    .news-list {
+        padding: 0 16px 0 16px;
+    }
+    .news-list__title {
+        font-size: 30px;
+        margin: 32px 0 58px 0;
+    }
+    .news-list__articles {
+        display: flex;
+        flex-direction: column;
+    }
+}
