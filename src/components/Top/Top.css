@@ -8,3 +8,10 @@
 .top_white {
     background: #ffffff;
 }
+
+@media screen and (max-width: 425px) {
+    .top {
+        background-image: url(../../images/main-image-mobile.png);
+        padding: 0;
+    }
+}

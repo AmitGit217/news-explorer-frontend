@@ -4,14 +4,16 @@
     z-index: 1;
     height: 100%;
     width: 100%;
-    display: flex;
+    display: none;
     visibility: hidden;
     opacity: 0;
     justify-content: flex-start;
     align-items: flex-start;
     transition: 0.2s;
 }
+/**? Remember to change the popup display !!!  */
 .popup__overlay_show {
+    display: flex;
     visibility: visible;
     opacity: 1;
 }
