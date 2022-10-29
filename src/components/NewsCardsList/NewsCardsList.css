@@ -44,11 +44,11 @@
 
 @media screen and (max-width: 425px) {
     .news-list {
-        padding: 0 16px 0 16px;
+        padding: 24px 16px;
     }
     .news-list__title {
         font-size: 30px;
-        margin: 32px 0 58px 0;
+        margin: 16px 0 58px 0;
     }
     .news-list__articles {
         display: flex;
