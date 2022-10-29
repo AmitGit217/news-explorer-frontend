@@ -23,11 +23,11 @@ export default function App() {
                         children={isRegistered ? <Signin /> : <Signup />}
                     />
                     <Top />
-                    <Routes>
+                    {/* <Routes>
                         <Route path='/' element={<Main />} />
                         <Route path='/saved-news' element={<SavedNews />} />
                     </Routes>
-                    <Footer />
+                    <Footer /> */}
                 </section>
             </RegisterContext.Provider>
         </PopupContext.Provider>

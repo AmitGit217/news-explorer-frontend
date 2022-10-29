@@ -14,7 +14,7 @@ export default function Top() {
                 location.pathname === "/saved-news" && "top_white"
             }`}>
             {location.pathname === "/" ? <Header /> : <SavedNewsHeader />}
-            {location.pathname !== "/saved-news" && <SearchForm />}
+            {/* {location.pathname !== "/saved-news" && <SearchForm />} */}
         </section>
     );
 }

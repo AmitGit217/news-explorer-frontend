@@ -63,3 +63,26 @@
     border-bottom: 3px #ffffff solid;
     color: #ffffff;
 }
+.header__burger {
+    display: none;
+}
+
+@media screen and (max-width: 425px) {
+    .header {
+        height: 56px;
+    }
+    .header__nav {
+        display: none;
+    }
+    .header__title {
+        font-size: 16px;
+    }
+    .header__burger {
+        all: unset;
+        display: block;
+        cursor: pointer;
+        background: url(../../images/burger.svg);
+        height: 24px;
+        width: 24px;
+    }
+}

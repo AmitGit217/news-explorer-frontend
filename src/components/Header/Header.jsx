@@ -10,6 +10,7 @@ export default function Header() {
     return (
         <header className='header'>
             <h1 className='header__title'>NewsExplorer</h1>
+            <button className='header__burger' type='button' />
             <nav className='header__nav'>
                 <Link
                     to={"/"}
