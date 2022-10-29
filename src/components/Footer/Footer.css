@@ -30,3 +30,25 @@
     height: 20px;
     width: 20px;
 }
+
+@media screen and (max-width: 425px) {
+    .footer {
+        flex-direction: column-reverse;
+        padding: 20px 16px;
+    }
+    .footer__copy {
+        text-align: center;
+        font-size: 15px;
+    }
+    .footer__links {
+        justify-content: space-between;
+        margin-bottom: 38px;
+    }
+    .footer__link_text {
+        font-size: 18px;
+    }
+    .footer__image-links {
+        display: flex;
+        gap: 25px;
+    }
+}

@@ -27,7 +27,7 @@ export default function App() {
                         <Route path='/' element={<Main />} />
                         <Route path='/saved-news' element={<SavedNews />} />
                     </Routes>
-                    {/* <Footer /> */}
+                    <Footer />
                 </section>
             </RegisterContext.Provider>
         </PopupContext.Provider>

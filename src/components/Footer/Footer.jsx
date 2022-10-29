@@ -10,26 +10,34 @@ export default function Footer() {
                 © 2021 Supersite, Powered by News API
             </p>
             <div className='footer__links'>
-                <p className='footer__link footer__link_text'>Home</p>
-                <a
-                    className='footer__link footer__link_text'
-                    href='https://practicum.com/en-isr/?gclid=Cj0KCQjwteOaBhDuARIsADBqRei8MiQBscI1NAhS1poy6Y0PCLiF0F7Ww6GySvKWf4QNApcLEm5xBT8aAsMgEALw_wcB'>
-                    Practicum
-                </a>
-                <a
-                    className='footer__link footer__link_image'
-                    href='https://github.com/AmitGit217'
-                    target={"_blank"}
-                    rel='noreferrer'>
-                    <img className='footer__image' src={github} alt='github' />
-                </a>
-                <a
-                    className='footer__link footer__link_image'
-                    href='https://www.linkedin.com/in/amitbg/'
-                    target={"_blank"}
-                    rel='noreferrer'>
-                    <img className='footer__image' src={linkedin} alt='' />
-                </a>
+                <div className='footer__text-links'>
+                    <p className='footer__link footer__link_text'>Home</p>
+                    <a
+                        className='footer__link footer__link_text'
+                        href='https://practicum.com/en-isr/?gclid=Cj0KCQjwteOaBhDuARIsADBqRei8MiQBscI1NAhS1poy6Y0PCLiF0F7Ww6GySvKWf4QNApcLEm5xBT8aAsMgEALw_wcB'>
+                        Practicum
+                    </a>
+                </div>
+                <div className='footer__image-links'>
+                    <a
+                        className='footer__link footer__link_image'
+                        href='https://github.com/AmitGit217'
+                        target={"_blank"}
+                        rel='noreferrer'>
+                        <img
+                            className='footer__image'
+                            src={github}
+                            alt='github'
+                        />
+                    </a>
+                    <a
+                        className='footer__link footer__link_image'
+                        href='https://www.linkedin.com/in/amitbg/'
+                        target={"_blank"}
+                        rel='noreferrer'>
+                        <img className='footer__image' src={linkedin} alt='' />
+                    </a>
+                </div>
             </div>
         </footer>
     );
