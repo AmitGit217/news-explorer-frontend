@@ -20,6 +20,16 @@
     gap: 25%;
 }
 
+.footer__text-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.footer__image-links {
+    display: flex;
+    gap: 25px;
+}
+
 .footer__link_text {
     cursor: pointer;
     text-decoration: none;
@@ -40,15 +50,16 @@
         text-align: center;
         font-size: 15px;
     }
+    .footer__text-links {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
     .footer__links {
         justify-content: space-between;
         margin-bottom: 38px;
     }
     .footer__link_text {
         font-size: 18px;
-    }
-    .footer__image-links {
-        display: flex;
-        gap: 25px;
     }
 }
