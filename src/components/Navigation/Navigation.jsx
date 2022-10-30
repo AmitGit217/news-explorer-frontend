@@ -2,13 +2,21 @@ import React, { useContext } from "react";
 import "./Navigation.css";
 import { NavContext } from "../../contexts/NavContext";
 import { PopupContext } from "../../contexts/PopupContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Navigation() {
+    const navigate = useNavigate();
+
     const { setPopup } = useContext(PopupContext);
     const { isMobileNavOpen, setMobileNav } = useContext(NavContext);
 
     const openFormPopup = () => {
         setPopup(true);
+        setMobileNav(false);
+    };
+
+    const backHome = () => {
+        navigate("/");
         setMobileNav(false);
     };
 
@@ -27,9 +35,9 @@ export default function Navigation() {
                     />
                 </div>
                 <div className='popup-nav__bottom'>
-                    <a href='home' className='popup-nav__home-link'>
+                    <p className='popup-nav__home-link' onClick={backHome}>
                         Home
-                    </a>
+                    </p>
                     <button
                         className='popup-nav__signin'
                         onClick={openFormPopup}>
