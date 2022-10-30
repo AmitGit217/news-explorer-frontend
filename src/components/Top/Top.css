@@ -14,4 +14,7 @@
         background-image: url(../../images/main-image-mobile.png);
         padding: 0;
     }
+    .top_white {
+        background: #ffffff;
+    }
 }
