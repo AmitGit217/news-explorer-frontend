@@ -1,9 +1,16 @@
 import React, { useContext } from "react";
 import "./Navigation.css";
 import { NavContext } from "../../contexts/NavContext";
+import { PopupContext } from "../../contexts/PopupContext";
 
 export default function Navigation() {
+    const { setPopup } = useContext(PopupContext);
     const { isMobileNavOpen, setMobileNav } = useContext(NavContext);
+
+    const openFormPopup = () => {
+        setPopup(true);
+        setMobileNav(false);
+    };
 
     return (
         <div
@@ -23,7 +30,11 @@ export default function Navigation() {
                     <a href='home' className='popup-nav__home-link'>
                         Home
                     </a>
-                    <button className='popup-nav__signin'>Sign in</button>
+                    <button
+                        className='popup-nav__signin'
+                        onClick={openFormPopup}>
+                        Sign in
+                    </button>
                 </div>
             </div>
         </div>

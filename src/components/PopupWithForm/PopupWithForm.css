@@ -1,19 +1,17 @@
 .popup__overlay {
-    position: absolute;
+    position: fixed;
     background: #0000005e;
     z-index: 1;
     height: 100%;
     width: 100%;
-    display: none;
     visibility: hidden;
     opacity: 0;
-    justify-content: flex-start;
-    align-items: flex-start;
+    display: flex;
+
     transition: 0.2s;
 }
 /**? Remember to change the popup display !!!  */
 .popup__overlay_show {
-    display: flex;
     visibility: visible;
     opacity: 1;
 }

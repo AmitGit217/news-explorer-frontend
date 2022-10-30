@@ -4,7 +4,7 @@
     z-index: 1;
     height: 100%;
     width: 100%;
-    display: none;
+
     visibility: hidden;
     opacity: 0;
     justify-content: flex-start;
@@ -14,7 +14,6 @@
 .popup-nav__overlay_show {
     visibility: visible;
     opacity: 1;
-    display: block;
 }
 
 .popup-nav__title {

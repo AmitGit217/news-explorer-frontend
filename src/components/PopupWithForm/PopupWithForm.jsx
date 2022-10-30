@@ -18,7 +18,7 @@ export default function PopupWithForm({ title, children }) {
                 <button
                     className='popup__exit'
                     type='button'
-                    onClick={() => setPopup(!popup)}
+                    onClick={() => setPopup(false)}
                 />
                 {children}
             </div>
