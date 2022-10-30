@@ -7,8 +7,9 @@
     visibility: hidden;
     opacity: 0;
     display: flex;
-
     transition: 0.2s;
+    justify-content: center;
+    align-items: center;
 }
 /**? Remember to change the popup display !!!  */
 .popup__overlay_show {
@@ -21,8 +22,7 @@
     background: #ffffff;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
     border-radius: 16px;
-    top: 15%;
-    left: 35%;
+    margin-top: -400px;
     width: 430px;
     border-radius: 16px;
     box-sizing: border-box;
@@ -132,4 +132,23 @@
     position: absolute;
     bottom: -20px;
     color: #ff0000;
+}
+
+@media screen and (max-width: 425px) {
+    .popup {
+        width: 320px;
+        padding: 16px;
+        margin-top: -500px;
+    }
+    .popup__form-submit {
+        height: 64px;
+        width: 288px;
+    }
+    .popup__exit {
+        top: -40px;
+        right: 0;
+        height: 24px;
+        width: 24px;
+        background-size: cover;
+    }
 }
