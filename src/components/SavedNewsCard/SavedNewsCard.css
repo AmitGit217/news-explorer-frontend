@@ -142,3 +142,27 @@
     visibility: visible;
     opacity: 1;
 }
+
+@media screen and (max-width: 425px) {
+    .saved-news-card {
+        height: 440px;
+    }
+    .saved-news-card__main {
+        margin: 0;
+        padding: 16px;
+    }
+    .saved-news-card__image {
+        height: 196px;
+    }
+    .saved-news-card__title {
+        font-size: 22px;
+        margin: 10px 0 14px 0;
+    }
+    .saved-news-card__text {
+        margin: 0 0 8px 0;
+        -webkit-line-clamp: 3;
+    }
+    .saved-news-card__remove-popup {
+        display: none;
+    }
+}

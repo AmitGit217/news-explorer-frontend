@@ -68,3 +68,19 @@
 .saved-news-header__button_active {
     border-bottom: 3px #1a1b22 solid;
 }
+.saved-news-header__burger {
+    display: none;
+}
+
+@media screen and (max-width: 425px) {
+    .saved-news-header__nav {
+        display: none;
+    }
+    .saved-news-header__burger {
+        all: unset;
+        background: url(../../images/burger-black.svg);
+        height: 24px;
+        width: 24px;
+        cursor: pointer;
+    }
+}

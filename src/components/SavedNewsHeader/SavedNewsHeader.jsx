@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./SavedNewsHeader.css";
 import { Link } from "react-router-dom";
 import logoutIcon from "../../images/logout.svg";
+import { NavContext } from "../../contexts/NavContext";
 
 export default function SavedNewsHeader() {
+    const { setMobileNav } = useContext(NavContext);
+
     return (
         <header className='saved-news-header'>
             <h1 className='saved-news-header__title'>NewsExplorer</h1>
+            <button
+                className='saved-news-header__burger'
+                type='button'
+                onClick={() => setMobileNav(true)}
+            />
             <nav className='saved-news-header__nav'>
                 <Link
                     to={"/"}

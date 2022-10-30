@@ -40,3 +40,19 @@
     gap: 16px;
     padding: 5%;
 }
+
+@media screen and (max-width: 425px) {
+    .saved-news {
+        margin: 8px 0 0 0;
+    }
+    .saved-news__title {
+        font-size: 14px;
+    }
+    .saved-news__description {
+        font-size: 30px;
+    }
+    .saved-news__articles {
+        display: flex;
+        flex-direction: column;
+    }
+}
