@@ -1,0 +1,81 @@
+.popup-nav__overlay {
+    position: absolute;
+    background: #0000005e;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transition: 0.2s;
+}
+.popup-nav__overlay_show {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+
+.popup-nav__title {
+    all: unset;
+    font-family: "Roboto Slab";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #ffffff;
+}
+.popup-nav__top {
+    height: 56px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-bottom: 1px solid #c4c4c4a6;
+}
+
+.popup-nav {
+    background: #1a1b22;
+}
+
+.popup-nav__bottom {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 16px 24px 16px;
+    gap: 22px;
+}
+
+.popup-nav__home-link {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.popup-nav__signin {
+    all: unset;
+    align-self: center;
+    cursor: pointer;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 100px;
+    height: 56px;
+    width: 288px;
+    text-align: center;
+}
+
+.popup-nav__exit {
+    all: unset;
+    cursor: pointer;
+    background: url(../../images/close.svg);
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    transition: 0.2s;
+    background-size: cover;
+    right: 16px;
+}

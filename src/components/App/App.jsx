@@ -11,24 +11,30 @@ import { RegisterContext } from "../../contexts/RegisterContext";
 import { useState } from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import Signup from "../Signup/Signup";
+import Navigation from "../Navigation/Navigation";
+import { NavContext } from "../../contexts/NavContext";
 
 export default function App() {
     const [popup, setPopup] = useState(false);
     const [isRegistered, setRegister] = useState(true);
+    const [isMobileNavOpen, setMobileNav] = useState(false);
     return (
         <PopupContext.Provider value={{ popup, setPopup }}>
             <RegisterContext.Provider value={{ isRegistered, setRegister }}>
-                <section className='app'>
-                    <PopupWithForm
-                        children={isRegistered ? <Signin /> : <Signup />}
-                    />
-                    <Top />
-                    <Routes>
-                        <Route path='/' element={<Main />} />
-                        <Route path='/saved-news' element={<SavedNews />} />
-                    </Routes>
-                    <Footer />
-                </section>
+                <NavContext.Provider value={{ isMobileNavOpen, setMobileNav }}>
+                    <section className='app'>
+                        <PopupWithForm
+                            children={isRegistered ? <Signin /> : <Signup />}
+                        />
+                        <Navigation />
+                        <Top />
+                        <Routes>
+                            <Route path='/' element={<Main />} />
+                            <Route path='/saved-news' element={<SavedNews />} />
+                        </Routes>
+                        <Footer />
+                    </section>
+                </NavContext.Provider>
             </RegisterContext.Provider>
         </PopupContext.Provider>
     );
