@@ -11,7 +11,9 @@ export default function Footer() {
             </p>
             <div className='footer__links'>
                 <div className='footer__text-links'>
-                    <p className='footer__link footer__link_text'>Home</p>
+                    <a href='#home' className='footer__link footer__link_text'>
+                        Home
+                    </a>
                     <a
                         className='footer__link footer__link_text'
                         href='https://practicum.com/en-isr/?gclid=Cj0KCQjwteOaBhDuARIsADBqRei8MiQBscI1NAhS1poy6Y0PCLiF0F7Ww6GySvKWf4QNApcLEm5xBT8aAsMgEALw_wcB'>

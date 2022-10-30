@@ -8,7 +8,7 @@ export default function Header() {
     const { popup, setPopup } = useContext(PopupContext);
 
     return (
-        <header className='header'>
+        <header className='header' id='home'>
             <h1 className='header__title'>NewsExplorer</h1>
             <button className='header__burger' type='button' />
             <nav className='header__nav'>
