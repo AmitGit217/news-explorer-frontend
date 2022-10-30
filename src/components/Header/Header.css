@@ -67,7 +67,7 @@
     display: none;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 720px) {
     .header {
         height: 56px;
         padding: 0 16px;

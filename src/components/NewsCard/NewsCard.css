@@ -7,6 +7,7 @@
     flex-direction: column;
     background: #ffffff;
     box-shadow: 0 0 100px rgba(8, 29, 45, 0.1);
+    margin-bottom: 16px;
 }
 
 .news-card__image {
@@ -133,9 +134,10 @@
     opacity: 1;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 720px) {
     .news-card {
         height: 440px;
+        width: 100%;
     }
     .news-card__main {
         margin: 0;

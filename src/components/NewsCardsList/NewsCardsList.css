@@ -14,8 +14,9 @@
 }
 
 .news-list__articles {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 16px;
 }
 

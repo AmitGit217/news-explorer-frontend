@@ -72,7 +72,7 @@
     display: none;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 720px) {
     .saved-news-header__nav {
         display: none;
     }

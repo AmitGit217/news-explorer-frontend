@@ -35,13 +35,15 @@
 
 .saved-news__articles {
     background: #f5f6f7;
-    display: grid;
-    grid-template-columns: repeat(3, auto);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 16px;
     padding: 5%;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 720px) {
     .saved-news {
         margin: 8px 0 0 0;
     }
