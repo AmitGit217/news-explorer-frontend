@@ -1,7 +1,7 @@
 .about {
     display: flex;
     column-gap: 50px;
-    padding: 5%;
+    padding: 5% 104px;
 }
 
 .about__main {
@@ -46,6 +46,10 @@
         flex-direction: column;
         gap: 24px;
         margin-top: 32px;
+        padding: 0 24px;
+    }
+    .about__image {
+        margin: 0 auto;
     }
     .about__title {
         font-size: 30px;

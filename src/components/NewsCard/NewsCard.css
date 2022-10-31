@@ -1,6 +1,6 @@
 .news-card {
     position: relative;
-    max-width: 400px;
+    max-width: 320px;
     height: 576px;
     border-radius: 16px;
     display: flex;
@@ -8,6 +8,7 @@
     background: #ffffff;
     box-shadow: 0 0 100px rgba(8, 29, 45, 0.1);
     margin-bottom: 16px;
+    padding-bottom: 24px;
 }
 
 .news-card__image {
@@ -138,13 +139,6 @@
 .news-card__archive-image:hover + .news-card__archive-popup {
     visibility: visible;
     opacity: 1;
-}
-
-@media screen and (max-width: 1400px) {
-    .news-card {
-        max-width: 300px;
-        padding-bottom: 10px;
-    }
 }
 
 @media screen and (max-width: 768px) {
