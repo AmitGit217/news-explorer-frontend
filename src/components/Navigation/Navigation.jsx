@@ -23,10 +23,7 @@ export default function Navigation() {
     };
 
     return (
-        <div
-            className={`popup-nav__overlay ${
-                isMobileNavOpen && "popup-nav__overlay_show"
-            }`}>
+        <div className={`overlay ${isMobileNavOpen && "overlay_show"}`}>
             <div className='popup-nav'>
                 <div className='popup-nav__top'>
                     <h6 className='popup-nav__title'>NewsExplorer</h6>

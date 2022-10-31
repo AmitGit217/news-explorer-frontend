@@ -16,7 +16,9 @@ export default function Footer() {
                     </a>
                     <a
                         className='footer__link footer__link_text'
-                        href='https://practicum.com/en-isr/?gclid=Cj0KCQjwteOaBhDuARIsADBqRei8MiQBscI1NAhS1poy6Y0PCLiF0F7Ww6GySvKWf4QNApcLEm5xBT8aAsMgEALw_wcB'>
+                        href='https://practicum.com/en-isr/?gclid=Cj0KCQjwteOaBhDuARIsADBqRei8MiQBscI1NAhS1poy6Y0PCLiF0F7Ww6GySvKWf4QNApcLEm5xBT8aAsMgEALw_wcB'
+                        target={"_blank"}
+                        rel='noreferrer'>
                         Practicum
                     </a>
                 </div>

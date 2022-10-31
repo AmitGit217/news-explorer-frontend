@@ -16,7 +16,7 @@ export default function Signup() {
                             type='text'
                             required
                         />
-                        <p className='popup__form-input_error'></p>
+                        <p className='popup__form-input_type_error'></p>
                     </label>
                     <label className='popup__form-label'>
                         Password:
@@ -25,7 +25,7 @@ export default function Signup() {
                             type='text'
                             required
                         />
-                        <p className='popup__form-input_error'></p>
+                        <p className='popup__form-input_type_error'></p>
                     </label>
                     <label className='popup__form-label'>
                         Username:
@@ -34,7 +34,7 @@ export default function Signup() {
                             type='text'
                             required
                         />
-                        <p className='popup__form-input_error'></p>
+                        <p className='popup__form-input_type_error'></p>
                     </label>
                 </div>
 

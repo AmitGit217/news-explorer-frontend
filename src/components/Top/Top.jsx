@@ -10,6 +10,7 @@ export default function Top() {
 
     return (
         <section
+            id='home'
             className={`top  ${
                 location.pathname === "/saved-news" && "top_white"
             }`}>

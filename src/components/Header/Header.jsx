@@ -10,7 +10,7 @@ export default function Header() {
     const { setMobileNav } = useContext(NavContext);
 
     return (
-        <header className='header' id='home'>
+        <header className='header'>
             <h1 className='header__title'>NewsExplorer</h1>
             <button
                 className='header__burger'

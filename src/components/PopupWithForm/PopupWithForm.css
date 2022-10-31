@@ -1,4 +1,4 @@
-.popup__overlay {
+.overlay {
     position: fixed;
     background: #0000005e;
     z-index: 1;
@@ -13,7 +13,7 @@
     align-items: center;
 }
 /**? Remember to change the popup display !!!  */
-.popup__overlay_show {
+.overlay_show {
     visibility: visible;
     opacity: 1;
 }
@@ -127,7 +127,7 @@
     color: #2f71e5;
 }
 
-.popup__form-input_error {
+.popup__form-input_type_error {
     all: unset;
     font-size: 12px;
     position: absolute;

@@ -9,9 +9,7 @@ export default function PopupWithForm({ children }) {
 
     return (
         <div
-            className={`popup__overlay ${
-                isPopupWithFormOpen && "popup__overlay_show"
-            }`}
+            className={`overlay ${isPopupWithFormOpen && "overlay_show"}`}
             onClick={(e) =>
                 e.target === e.currentTarget && setPopupWithForm(false)
             }>

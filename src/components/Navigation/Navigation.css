@@ -1,4 +1,4 @@
-.popup-nav__overlay {
+.overlay {
     position: absolute;
     background: #0000005e;
     z-index: 1;
@@ -11,7 +11,7 @@
     align-items: flex-start;
     transition: 0.2s;
 }
-.popup-nav__overlay_show {
+.overlay_show {
     visibility: visible;
     opacity: 1;
 }
