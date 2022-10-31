@@ -6,11 +6,11 @@ import { useNavigate } from "react-router-dom";
 
 export default function Navigation() {
     const navigate = useNavigate();
-    const { setPopup } = useContext(PopupContext);
+    const { setPopupWithForm } = useContext(PopupContext);
     const { isMobileNavOpen, setMobileNav } = useContext(NavContext);
 
     const openFormPopup = () => {
-        setPopup(true);
+        setPopupWithForm(true);
         setMobileNav(false);
     };
     const backHome = () => {

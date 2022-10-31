@@ -176,7 +176,7 @@
 
 @media screen and (max-width: 720px) {
     .saved-news-card {
-        max-width: 400px;
+        max-width: 320px;
         height: 440px;
         width: 100%;
     }
