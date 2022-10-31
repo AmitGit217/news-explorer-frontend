@@ -1,5 +1,5 @@
 .footer {
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     padding: 30px 104px 0 104px;
     display: flex;
     justify-content: space-between;

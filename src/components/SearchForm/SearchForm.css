@@ -16,7 +16,7 @@
 .search-form__title {
     all: unset;
     max-width: 608px;
-    font-family: "Roboto Slab";
+    font-family: "Roboto Slab", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 60px;
@@ -24,7 +24,7 @@
 }
 .search-form__subtitle {
     all: unset;
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -33,7 +33,7 @@
 }
 
 .search-form__search {
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     position: relative;
     width: 608px;

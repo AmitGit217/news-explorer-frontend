@@ -32,7 +32,7 @@
 
 .popup__title {
     all: unset;
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     font-size: 24px;
     font-weight: 900;
 }
@@ -92,7 +92,7 @@
 .popup__form-submit {
     all: unset;
     cursor: pointer;
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -115,7 +115,7 @@
 
 .popup__form-nav {
     align-self: center;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;

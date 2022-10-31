@@ -26,7 +26,7 @@
 
 .saved-news-card__date {
     all: unset;
-    font-family: "Source Sans Pro";
+    font-family: "Source Sans Pro", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -35,7 +35,7 @@
 
 .saved-news-card__title {
     all: unset;
-    font-family: "Roboto Slab";
+    font-family: "Roboto Slab", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 26px;
@@ -50,7 +50,7 @@
 }
 
 .saved-news-card__text {
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -68,7 +68,7 @@
 
 .saved-news-card__source {
     all: unset;
-    font-family: "Roboto Slab";
+    font-family: "Roboto Slab", sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -121,7 +121,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     font-size: 14px;
     font-weight: 500;
     left: 24px;
@@ -139,7 +139,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     font-size: 12px;
     font-weight: 500;
     right: 45px;
