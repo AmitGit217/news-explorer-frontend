@@ -23,7 +23,6 @@
     background: #ffffff;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
     border-radius: 16px;
-    margin-top: -400px;
     width: 430px;
     border-radius: 16px;
     box-sizing: border-box;
@@ -145,7 +144,6 @@
     .popup__container {
         max-width: 320px;
         padding: 16px;
-        margin-top: -500px;
     }
     .popup__form-submit {
         height: 64px;
