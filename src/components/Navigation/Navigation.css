@@ -1,4 +1,4 @@
-.overlay {
+.popup-nav {
     position: absolute;
     background: #0000005e;
     z-index: 1;
@@ -11,7 +11,7 @@
     align-items: flex-start;
     transition: 0.2s;
 }
-.overlay_show {
+.popup-nav_show {
     visibility: visible;
     opacity: 1;
 }
@@ -33,7 +33,7 @@
     border-bottom: 1px solid #c4c4c4a6;
 }
 
-.popup-nav {
+.popup-nav__container {
     background: #1a1b22;
 }
 

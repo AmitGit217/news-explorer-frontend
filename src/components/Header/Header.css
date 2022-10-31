@@ -35,7 +35,7 @@
     align-items: center;
 }
 
-.header__button-nav {
+.header__button_type_nav {
     margin-right: 50px;
     height: 100%;
     color: #b6bcbf;
@@ -43,11 +43,11 @@
     text-align: center;
 }
 
-.header__button-nav:hover {
+.header__button_type_nav:hover {
     opacity: 0.6;
 }
 
-.header__signin-button {
+.header__button_type_signin {
     border: 1px solid #ffffff;
     border-radius: 100px;
     width: 180px;
@@ -56,7 +56,7 @@
     transition: 0.1s;
 }
 
-.header__signin-button:hover {
+.header__button_type_signin:hover {
     background: #ffffff21;
 }
 .header__button_active {

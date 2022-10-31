@@ -9,11 +9,11 @@ export default function PopupWithForm({ children }) {
 
     return (
         <div
-            className={`overlay ${isPopupWithFormOpen && "overlay_show"}`}
+            className={`popup ${isPopupWithFormOpen && "popup_show"}`}
             onClick={(e) =>
                 e.target === e.currentTarget && setPopupWithForm(false)
             }>
-            <div className='popup'>
+            <div className='popup__container'>
                 <button
                     className='popup__exit'
                     type='button'
