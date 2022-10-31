@@ -26,7 +26,7 @@ export default function Navigation() {
         <div className={`popup-nav ${isMobileNavOpen && "popup-nav_show"}`}>
             <div className='popup-nav__container'>
                 <div className='popup-nav__top'>
-                    <h6 className='popup-nav__title'>NewsExplorer</h6>
+                    <div className='popup-nav__title' />
                     <button
                         className='popup-nav__exit'
                         type='button'

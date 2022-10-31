@@ -75,6 +75,9 @@
 }
 
 @media screen and (max-width: 720px) {
+    .saved-news-header {
+        height: 56px;
+    }
     .saved-news-header__nav {
         display: none;
     }

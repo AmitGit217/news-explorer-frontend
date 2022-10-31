@@ -18,11 +18,12 @@
 
 .popup-nav__title {
     all: unset;
-    font-family: "Roboto Slab", sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    color: #ffffff;
+    background: url(../../images/NewsExplorer.svg);
+    height: 24px;
+    width: 117px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 .popup-nav__top {
     height: 56px;
