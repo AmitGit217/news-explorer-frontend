@@ -3,22 +3,27 @@ import { PopupContext } from "../../contexts/PopupContext";
 import "./PopupWithForm.css";
 
 export default function PopupWithForm({ title, children }) {
-    const { popup, setPopup } = useContext(PopupContext);
+    const { isPopupWithFormOpen, setPopupWithForm } = useContext(PopupContext);
 
     useEffect(() => {
-        const closeFromEsc = (e) => e.key === "Escape" && setPopup(false);
+        const closeFromEsc = (e) =>
+            e.key === "Escape" && setPopupWithForm(false);
         document.addEventListener("keydown", closeFromEsc);
-    }, [setPopup]);
+    }, [setPopupWithForm]);
 
     return (
         <div
-            className={`popup__overlay ${popup && "popup__overlay_show"}`}
-            onClick={(e) => e.target === e.currentTarget && setPopup(false)}>
+            className={`popup__overlay ${
+                isPopupWithFormOpen && "popup__overlay_show"
+            }`}
+            onClick={(e) =>
+                e.target === e.currentTarget && setPopupWithForm(false)
+            }>
             <div className='popup'>
                 <button
                     className='popup__exit'
                     type='button'
-                    onClick={() => setPopup(false)}
+                    onClick={() => setPopupWithForm(false)}
                 />
                 {children}
             </div>

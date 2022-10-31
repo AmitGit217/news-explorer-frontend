@@ -6,7 +6,7 @@ import { PopupContext } from "../../contexts/PopupContext";
 import { NavContext } from "../../contexts/NavContext";
 
 export default function Header() {
-    const { setPopup } = useContext(PopupContext);
+    const { setPopupWithForm } = useContext(PopupContext);
     const { setMobileNav } = useContext(NavContext);
 
     return (
@@ -29,7 +29,7 @@ export default function Header() {
                     Saved articles
                 </Link>
                 <button
-                    onClick={() => setPopup(true)}
+                    onClick={() => setPopupWithForm(true)}
                     className='header__button header__signin-button'
                     type='button'>
                     Sign in
