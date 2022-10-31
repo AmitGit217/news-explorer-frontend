@@ -3,7 +3,7 @@ import "./SearchForm.css";
 
 export default function SearchForm() {
     return (
-        <div className='search-form'>
+        <form className='search-form'>
             <div className='search-form__text'>
                 <h2 className='search-form__title'>
                     What's going on in the world?
@@ -23,6 +23,6 @@ export default function SearchForm() {
                     Search
                 </button>
             </div>
-        </div>
+        </form>
     );
 }
