@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { RegisterContext } from "../../contexts/RegisterContext";
 
 export default function Signin() {
-    const { isRegistered, setRegister } = useContext(RegisterContext);
+    const { setRegister } = useContext(RegisterContext);
     return (
         <>
             <h6 className='popup__title'>Sign in</h6>
@@ -37,7 +37,7 @@ export default function Signin() {
                     or{" "}
                     <span
                         className='popup__form-nav_action'
-                        onClick={() => setRegister(!isRegistered)}>
+                        onClick={() => setRegister(false)}>
                         Sign up
                     </span>
                 </p>
