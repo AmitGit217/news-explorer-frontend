@@ -3,6 +3,7 @@
     background: #0000005e;
     z-index: 1;
     height: 100%;
+    max-width: 1440px;
     width: 100%;
     visibility: hidden;
     opacity: 0;

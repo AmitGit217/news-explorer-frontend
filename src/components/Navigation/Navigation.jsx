@@ -21,6 +21,7 @@ export default function Navigation() {
         setMobileNav(false);
         navigate("/saved-news");
     };
+
     return (
         <div
             className={`popup-nav__overlay ${
