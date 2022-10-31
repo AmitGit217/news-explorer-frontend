@@ -1,15 +1,11 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { PopupContext } from "../../contexts/PopupContext";
 import "./PopupWithForm.css";
+import { useCloseFromEsc } from "../../utils/functions";
 
-export default function PopupWithForm({ title, children }) {
+export default function PopupWithForm({ children }) {
     const { isPopupWithFormOpen, setPopupWithForm } = useContext(PopupContext);
-
-    useEffect(() => {
-        const closeFromEsc = (e) =>
-            e.key === "Escape" && setPopupWithForm(false);
-        document.addEventListener("keydown", closeFromEsc);
-    }, [setPopupWithForm]);
+    useCloseFromEsc(setPopupWithForm);
 
     return (
         <div
