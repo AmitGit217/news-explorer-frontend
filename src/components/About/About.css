@@ -1,7 +1,7 @@
 .about {
     display: flex;
     column-gap: 50px;
-    padding: 5% 104px;
+    padding: 80px 104px;
 }
 
 .about__main {
