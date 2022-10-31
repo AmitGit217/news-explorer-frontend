@@ -16,8 +16,9 @@ import { NavContext } from "../../contexts/NavContext";
 
 export default function App() {
     const [isPopupWithFormOpen, setPopupWithForm] = useState(false);
-    const [isRegistered, setRegister] = useState(true);
     const [isMobileNavOpen, setMobileNav] = useState(false);
+    const [isRegistered, setRegister] = useState(true);
+
     return (
         <PopupContext.Provider
             value={{ isPopupWithFormOpen, setPopupWithForm }}>
