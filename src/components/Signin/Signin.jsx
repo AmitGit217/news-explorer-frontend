@@ -14,6 +14,7 @@ export default function Signin() {
                         <input
                             className='popup__form-input'
                             type='text'
+                            placeholder='Enter email'
                             required
                         />
                         <p className='popup__form-input_type_error'></p>
@@ -21,6 +22,7 @@ export default function Signin() {
                     <label className='popup__form-label'>
                         Password:
                         <input
+                            placeholder='Enter password'
                             className='popup__form-input'
                             type='text'
                             required

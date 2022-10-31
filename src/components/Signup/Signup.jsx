@@ -12,6 +12,7 @@ export default function Signup() {
                     <label className='popup__form-label'>
                         Email:
                         <input
+                            placeholder='Enter email'
                             className='popup__form-input'
                             type='text'
                             required
@@ -21,6 +22,7 @@ export default function Signup() {
                     <label className='popup__form-label'>
                         Password:
                         <input
+                            placeholder='Enter password'
                             className='popup__form-input'
                             type='text'
                             required
@@ -30,6 +32,7 @@ export default function Signup() {
                     <label className='popup__form-label'>
                         Username:
                         <input
+                            placeholder='Enter your username'
                             className='popup__form-input'
                             type='text'
                             required

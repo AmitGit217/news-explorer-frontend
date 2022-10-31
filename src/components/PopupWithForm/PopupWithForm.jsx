@@ -9,7 +9,9 @@ export default function PopupWithForm({ children }) {
     const { isPopupWithFormOpen, setPopupWithForm } = useContext(PopupContext);
     const closePopupWithForm = () => {
         setPopupWithForm(false);
-        setRegister(true);
+        setTimeout(() => {
+            setRegister(true);
+        }, 200);
     };
 
     useCloseFromEsc(setPopupWithForm);

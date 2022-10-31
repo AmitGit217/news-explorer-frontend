@@ -18,7 +18,7 @@
 
 .popup-nav__title {
     all: unset;
-    font-family: "Roboto Slab";
+    font-family: "Roboto Slab", sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -38,7 +38,7 @@
 }
 
 .popup-nav__bottom {
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
