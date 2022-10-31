@@ -13,7 +13,6 @@ import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import Signup from "../Signup/Signup";
 import Navigation from "../Navigation/Navigation";
 import { NavContext } from "../../contexts/NavContext";
-import Preloader from "../Preloader/Preloader";
 
 export default function App() {
     const [isPopupWithFormOpen, setPopupWithForm] = useState(false);

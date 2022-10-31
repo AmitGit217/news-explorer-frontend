@@ -6,6 +6,13 @@ import NewsCard from "../NewsCard/NewsCard";
 export default function NewsCardsList() {
     return (
         <section className='news-list'>
+            <div className='news-list__not-found'>
+                <div className='news-list__not-found-image' />
+                <p className='news-list__not-found-title'>Nothing found</p>
+                <p className='news-list__not-found-text'>
+                    Sorry, but nothing matched your search terms.
+                </p>
+            </div>
             <h3 className='news-list__title'>Search results</h3>
             <ul className='news-list__articles'>
                 {news.map((article, index) => {
