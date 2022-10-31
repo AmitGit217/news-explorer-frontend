@@ -6,7 +6,7 @@ import NewsCard from "../NewsCard/NewsCard";
 export default function NewsCardsList() {
     return (
         <section className='news-list'>
-            <h4 className='news-list__title'>Search results</h4>
+            <h3 className='news-list__title'>Search results</h3>
             <ul className='news-list__articles'>
                 {news.map((article, index) => {
                     return (
