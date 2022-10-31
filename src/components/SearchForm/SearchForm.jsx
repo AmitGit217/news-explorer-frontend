@@ -5,9 +5,9 @@ export default function SearchForm() {
     return (
         <form className='search-form'>
             <div className='search-form__text'>
-                <h2 className='search-form__title'>
+                <h1 className='search-form__title'>
                     What's going on in the world?
-                </h2>
+                </h1>
                 <h3 className='search-form__subtitle'>
                     Find the latest news on any topic and save them in your
                     personal account.

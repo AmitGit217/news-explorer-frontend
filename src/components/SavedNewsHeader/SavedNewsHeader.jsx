@@ -9,7 +9,7 @@ export default function SavedNewsHeader() {
 
     return (
         <header className='saved-news-header'>
-            <h1 className='saved-news-header__title'>NewsExplorer</h1>
+            <div className='saved-news-header__title' />
             <button
                 className='saved-news-header__burger'
                 type='button'

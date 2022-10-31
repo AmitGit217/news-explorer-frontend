@@ -11,10 +11,12 @@
 
 .header__title {
     all: unset;
-    font-family: "Roboto Slab";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
+    background: url(../../images/NewsExplorer.svg);
+    height: 24.79956817626953px;
+    width: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 .header__nav {
@@ -82,7 +84,9 @@
         display: none;
     }
     .header__title {
-        font-size: 16px;
+        height: 24px;
+        width: 117px;
+        background-size: contain;
     }
     .header__burger {
         all: unset;
