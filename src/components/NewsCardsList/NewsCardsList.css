@@ -44,6 +44,12 @@
     background: #e8e8e8;
 }
 
+@media screen and (max-width: 768px) {
+    .news-list {
+        padding: 24px 0;
+    }
+}
+
 @media screen and (max-width: 425px) {
     .news-list {
         padding: 24px 16px;

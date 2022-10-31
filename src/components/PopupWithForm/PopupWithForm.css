@@ -134,6 +134,12 @@
     color: #ff0000;
 }
 
+@media screen and (max-width: 768px) {
+    .popup {
+        max-width: 420px;
+    }
+}
+
 @media screen and (max-width: 720px) {
     .popup {
         max-width: 320px;
