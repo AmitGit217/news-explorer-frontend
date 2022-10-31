@@ -45,6 +45,9 @@
 }
 
 @media screen and (max-width: 1400px) {
+    .news-list__articles {
+        padding: 0;
+    }
     .news-list {
         padding: 24px 0;
     }

@@ -1,12 +1,14 @@
 .saved-news-card {
     position: relative;
-    max-width: 400px;
+    max-width: 320px;
     height: 576px;
     border-radius: 16px;
     display: flex;
     flex-direction: column;
     background: #ffffff;
     box-shadow: 0 0 100px rgba(8, 29, 45, 0.1);
+    margin-bottom: 16px;
+    padding-bottom: 24px;
 }
 
 .saved-news-card__image {

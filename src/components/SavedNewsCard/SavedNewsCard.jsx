@@ -10,7 +10,7 @@ export default function SavedNewsCard({
     keyword,
 }) {
     return (
-        <div className='saved-news-card'>
+        <article className='saved-news-card'>
             <img className='saved-news-card__image' src={image} alt={title} />
             <div className='saved-news-card__main'>
                 <p className='saved-news-card__date'>{date}</p>
@@ -28,6 +28,6 @@ export default function SavedNewsCard({
                 </p>
             </span>
             <p className='saved-news-card__keyword'>{keyword}</p>
-        </div>
+        </article>
     );
 }

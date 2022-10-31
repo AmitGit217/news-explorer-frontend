@@ -16,7 +16,7 @@ export default function SavedNews() {
                     <strong>Nature, Yellowstone, and 2 other</strong>
                 </p>
             </div>
-            <div className='saved-news__articles'>
+            <ul className='saved-news__articles'>
                 {savedNews.map((article, index) => {
                     return (
                         <SavedNewsCard
@@ -31,7 +31,7 @@ export default function SavedNews() {
                         />
                     );
                 })}
-            </div>
+            </ul>
         </section>
     );
 }

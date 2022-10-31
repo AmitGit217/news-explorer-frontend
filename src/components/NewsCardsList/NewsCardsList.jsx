@@ -7,7 +7,7 @@ export default function NewsCardsList() {
     return (
         <section className='news-list'>
             <h4 className='news-list__title'>Search results</h4>
-            <div className='news-list__articles'>
+            <ul className='news-list__articles'>
                 {news.map((article, index) => {
                     return (
                         <NewsCard
@@ -20,7 +20,7 @@ export default function NewsCardsList() {
                         />
                     );
                 })}
-            </div>
+            </ul>
             <button className='news-list__show-more' type='button'>
                 Show more
             </button>

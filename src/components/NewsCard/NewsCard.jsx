@@ -13,7 +13,7 @@ export default function NewsCard({
     // Temporary state visualization before API connection
     const [tempIsSaved, setTempIsSaved] = useState(false);
     return (
-        <div className='news-card'>
+        <article className='news-card'>
             <img className='news-card__image' src={image} alt={title} />
             <div className='news-card__main'>
                 <p className='news-card__date'>{date}</p>
@@ -35,6 +35,6 @@ export default function NewsCard({
                     Sign in to save articles
                 </p>
             </span>
-        </div>
+        </article>
     );
 }
