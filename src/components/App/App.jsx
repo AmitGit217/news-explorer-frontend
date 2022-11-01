@@ -13,8 +13,8 @@ import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import Signup from "../Signup/Signup";
 import Navigation from "../Navigation/Navigation";
 import { NavContext } from "../../contexts/NavContext";
-import Tooltip from "../Tooltip/Tooltip";
 import { TooltipContext } from "../../contexts/Tooltip";
+import Tooltip from "../Tooltip/Tooltip";
 
 export default function App() {
     const [isPopupWithFormOpen, setPopupWithForm] = useState(false);
