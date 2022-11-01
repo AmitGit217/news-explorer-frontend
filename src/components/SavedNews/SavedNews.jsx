@@ -19,16 +19,18 @@ export default function SavedNews() {
             <ul className='saved-news__articles'>
                 {savedNews.map((article, index) => {
                     return (
-                        <SavedNewsCard
-                            isSaved={true}
-                            key={index}
-                            image={article.image}
-                            date={article.date}
-                            title={article.title}
-                            text={article.text}
-                            source={article.source}
-                            keyword={article.keyword}
-                        />
+                        <li>
+                            <SavedNewsCard
+                                isSaved={true}
+                                key={index}
+                                image={article.image}
+                                date={article.date}
+                                title={article.title}
+                                text={article.text}
+                                source={article.source}
+                                keyword={article.keyword}
+                            />
+                        </li>
                     );
                 })}
             </ul>

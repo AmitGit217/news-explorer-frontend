@@ -17,14 +17,16 @@ export default function NewsCardsList() {
             <ul className='news-list__articles'>
                 {news.map((article, index) => {
                     return (
-                        <NewsCard
-                            key={index}
-                            image={article.image}
-                            date={article.date}
-                            title={article.title}
-                            text={article.text}
-                            source={article.source}
-                        />
+                        <li>
+                            <NewsCard
+                                key={index}
+                                image={article.image}
+                                date={article.date}
+                                title={article.title}
+                                text={article.text}
+                                source={article.source}
+                            />
+                        </li>
                     );
                 })}
             </ul>
