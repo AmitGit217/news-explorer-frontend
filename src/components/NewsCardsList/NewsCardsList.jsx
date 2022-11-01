@@ -2,10 +2,12 @@ import React from "react";
 import "./NewsCardsList.css";
 import { news } from "../../db/news-temp.js";
 import NewsCard from "../NewsCard/NewsCard";
+import Preloader from "../Preloader/Preloader";
 
 export default function NewsCardsList() {
     return (
         <section className='news-list'>
+            <Preloader />
             <div className='news-list__not-found'>
                 <div className='news-list__not-found-image' />
                 <p className='news-list__not-found-title'>Nothing found</p>
@@ -13,6 +15,7 @@ export default function NewsCardsList() {
                     Sorry, but nothing matched your search terms.
                 </p>
             </div>
+
             <h2 className='news-list__title'>Search results</h2>
             <ul className='news-list__articles'>
                 {news.map((article, index) => {

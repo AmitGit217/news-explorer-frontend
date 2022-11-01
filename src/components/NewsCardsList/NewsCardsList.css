@@ -5,6 +5,7 @@
     padding: 5% 104px;
     background: #f5f6f7;
     align-items: center;
+    position: relative;
 }
 .news-list__title {
     font-family: "Roboto Slab", sans-serif;
