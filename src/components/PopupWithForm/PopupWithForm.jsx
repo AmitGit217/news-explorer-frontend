@@ -3,7 +3,7 @@ import { PopupContext } from "../../contexts/PopupContext";
 import "./PopupWithForm.css";
 import { useCloseFromEsc } from "../../utils/functions";
 import { RegisterContext } from "../../contexts/RegisterContext";
-import { TooltipContext } from "../../contexts/Tooltip";
+import { TooltipContext } from "../../contexts/TooltipContext";
 
 export default function PopupWithForm({ children }) {
     const { setRegister } = useContext(RegisterContext);

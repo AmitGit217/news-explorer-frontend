@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { RegisterContext } from "../../contexts/RegisterContext";
-import { TooltipContext } from "../../contexts/Tooltip";
+import { TooltipContext } from "../../contexts/TooltipContext";
 
 export default function Tooltip() {
     const { setTooltip } = useContext(TooltipContext);

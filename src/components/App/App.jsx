@@ -13,7 +13,7 @@ import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import Signup from "../Signup/Signup";
 import Navigation from "../Navigation/Navigation";
 import { NavContext } from "../../contexts/NavContext";
-import { TooltipContext } from "../../contexts/Tooltip";
+import { TooltipContext } from "../../contexts/TooltipContext";
 import Tooltip from "../Tooltip/Tooltip";
 
 export default function App() {
