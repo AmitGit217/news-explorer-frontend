@@ -14,7 +14,7 @@ export default function SavedNewsCard({
             <img className='saved-news-card__image' src={image} alt={title} />
             <div className='saved-news-card__main'>
                 <p className='saved-news-card__date'>{date}</p>
-                <h5 className='saved-news-card__title'>{title}</h5>
+                <h2 className='saved-news-card__title'>{title}</h2>
                 <p className='saved-news-card__text'>{text}</p>
                 <p className='saved-news-card__source'>{source}</p>
             </div>

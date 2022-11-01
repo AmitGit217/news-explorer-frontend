@@ -13,7 +13,7 @@ export default function NewsCardsList() {
                     Sorry, but nothing matched your search terms.
                 </p>
             </div>
-            <h3 className='news-list__title'>Search results</h3>
+            <h2 className='news-list__title'>Search results</h2>
             <ul className='news-list__articles'>
                 {news.map((article, index) => {
                     return (

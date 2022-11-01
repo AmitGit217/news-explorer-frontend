@@ -7,10 +7,10 @@ export default function SavedNews() {
     return (
         <section className='saved-news'>
             <div className='saved-news__text'>
-                <h4 className='saved-news__title'>Saved articles</h4>
-                <h5 className='saved-news__description'>
+                <h2 className='saved-news__title'>Saved articles</h2>
+                <p className='saved-news__description'>
                     Elise, you have 5 saved articles
-                </h5>
+                </p>
                 <p className='saved-news__keywords'>
                     By keywords:{" "}
                     <strong>Nature, Yellowstone, and 2 other</strong>

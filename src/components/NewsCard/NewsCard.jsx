@@ -17,7 +17,7 @@ export default function NewsCard({
             <img className='news-card__image' src={image} alt={title} />
             <div className='news-card__main'>
                 <p className='news-card__date'>{date}</p>
-                <h4 className='news-card__title'>{title}</h4>
+                <h2 className='news-card__title'>{title}</h2>
                 <p className='news-card__text'>{text}</p>
                 <p className='news-card__source'>{source}</p>
             </div>
