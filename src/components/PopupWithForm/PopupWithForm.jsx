@@ -3,13 +3,16 @@ import { PopupContext } from "../../contexts/PopupContext";
 import "./PopupWithForm.css";
 import { useCloseFromEsc } from "../../utils/functions";
 import { RegisterContext } from "../../contexts/RegisterContext";
+import { TooltipContext } from "../../contexts/Tooltip";
 
 export default function PopupWithForm({ children }) {
     const { setRegister } = useContext(RegisterContext);
+    const { setTooltip } = useContext(TooltipContext);
     const { isPopupWithFormOpen, setPopupWithForm } = useContext(PopupContext);
     const closePopupWithForm = () => {
         setPopupWithForm(false);
         setTimeout(() => {
+            setTooltip(false);
             setRegister(true);
         }, 200);
     };

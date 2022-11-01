@@ -13,37 +13,41 @@ import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import Signup from "../Signup/Signup";
 import Navigation from "../Navigation/Navigation";
 import { NavContext } from "../../contexts/NavContext";
-import ToolTip from "../ToolTip/ToolTip";
+import Tooltip from "../Tooltip/Tooltip";
+import { TooltipContext } from "../../contexts/Tooltip";
 
 export default function App() {
     const [isPopupWithFormOpen, setPopupWithForm] = useState(false);
     const [isMobileNavOpen, setMobileNav] = useState(false);
     const [isRegistered, setRegister] = useState(true);
-    const popupToShow = () => {
-        if (isRegistered) {
-            return <Signin />;
-        } else if (!isRegistered) {
-            return <Signup />;
-        } else {
-            <ToolTip />;
-        }
-    };
+    const [isTooltipOpen, setTooltip] = useState(false);
+
+    const showForm = () => (
+        <PopupWithForm children={isRegistered ? <Signin /> : <Signup />} />
+    );
+    const showTooltip = () => <PopupWithForm children={<Tooltip />} />;
 
     return (
         <PopupContext.Provider
             value={{ isPopupWithFormOpen, setPopupWithForm }}>
             <RegisterContext.Provider value={{ isRegistered, setRegister }}>
                 <NavContext.Provider value={{ isMobileNavOpen, setMobileNav }}>
-                    <section className='app'>
-                        <PopupWithForm children={popupToShow()} />
-                        <Navigation />
-                        <Top />
-                        <Routes>
-                            <Route path='/' element={<Main />} />
-                            <Route path='/saved-news' element={<SavedNews />} />
-                        </Routes>
-                        <Footer />
-                    </section>
+                    <TooltipContext.Provider
+                        value={{ isTooltipOpen, setTooltip }}>
+                        <section className='app'>
+                            {isTooltipOpen ? showTooltip() : showForm()}
+                            <Navigation />
+                            <Top />
+                            <Routes>
+                                <Route path='/' element={<Main />} />
+                                <Route
+                                    path='/saved-news'
+                                    element={<SavedNews />}
+                                />
+                            </Routes>
+                            <Footer />
+                        </section>
+                    </TooltipContext.Provider>
                 </NavContext.Provider>
             </RegisterContext.Provider>
         </PopupContext.Provider>

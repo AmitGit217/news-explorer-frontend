@@ -1,9 +1,15 @@
 import React from "react";
 import { useContext } from "react";
 import { RegisterContext } from "../../contexts/RegisterContext";
+import { TooltipContext } from "../../contexts/Tooltip";
 
-export default function ToolTip() {
+export default function Tooltip() {
+    const { setTooltip } = useContext(TooltipContext);
     const { setRegister } = useContext(RegisterContext);
+    const navigateToForm = () => {
+        setTooltip(false);
+        setRegister(true);
+    };
     return (
         <>
             <h2 className='popup__title'>
@@ -12,7 +18,7 @@ export default function ToolTip() {
             <p className='popup__form-nav'>
                 <span
                     className='popup__form-nav_action'
-                    onClick={() => setRegister(true)}>
+                    onClick={navigateToForm}>
                     Sign in
                 </span>
             </p>

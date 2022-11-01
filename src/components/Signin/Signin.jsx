@@ -5,20 +5,16 @@ import { RegisterContext } from "../../contexts/RegisterContext";
 export default function Signin() {
     const { setRegister } = useContext(RegisterContext);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setRegister("success");
-    };
     return (
         <>
             <h2 className='popup__title'>Sign in</h2>
-            <form className='popup__form' onSubmit={handleSubmit}>
+            <form className='popup__form'>
                 <div className='popup__form-labels'>
                     <label className='popup__form-label'>
                         Email:
                         <input
                             className='popup__form-input'
-                            type='text'
+                            type='email'
                             placeholder='Enter email'
                             required
                         />
@@ -29,7 +25,7 @@ export default function Signin() {
                         <input
                             placeholder='Enter password'
                             className='popup__form-input'
-                            type='text'
+                            type='password'
                             required
                         />
                         <p className='popup__form-input_type_error'></p>
