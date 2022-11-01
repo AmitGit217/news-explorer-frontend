@@ -22,10 +22,17 @@ export default function App() {
     const [isRegistered, setRegister] = useState(true);
     const [isTooltipOpen, setTooltip] = useState(false);
 
-    const showForm = () => (
-        <PopupWithForm children={isRegistered ? <Signin /> : <Signup />} />
-    );
-    const showTooltip = () => <PopupWithForm children={<Tooltip />} />;
+    const popupToShow = () => {
+        if (isTooltipOpen) {
+            return <PopupWithForm children={<Tooltip />} />;
+        } else {
+            return (
+                <PopupWithForm
+                    children={isRegistered ? <Signin /> : <Signup />}
+                />
+            );
+        }
+    };
 
     return (
         <PopupContext.Provider
@@ -35,7 +42,7 @@ export default function App() {
                     <TooltipContext.Provider
                         value={{ isTooltipOpen, setTooltip }}>
                         <section className='app'>
-                            {isTooltipOpen ? showTooltip() : showForm()}
+                            {popupToShow()}
                             <Navigation />
                             <Top />
                             <Routes>
