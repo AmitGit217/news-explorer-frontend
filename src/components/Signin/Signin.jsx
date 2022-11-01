@@ -4,10 +4,15 @@ import { RegisterContext } from "../../contexts/RegisterContext";
 
 export default function Signin() {
     const { setRegister } = useContext(RegisterContext);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setRegister("success");
+    };
     return (
         <>
-            <h6 className='popup__title'>Sign in</h6>
-            <form className='popup__form'>
+            <h2 className='popup__title'>Sign in</h2>
+            <form className='popup__form' onSubmit={handleSubmit}>
                 <div className='popup__form-labels'>
                     <label className='popup__form-label'>
                         Email:

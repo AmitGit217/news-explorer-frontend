@@ -6,7 +6,7 @@ export default function Signup() {
     const { setRegister } = useContext(RegisterContext);
     return (
         <>
-            <h6 className='popup__title'>Sign up</h6>
+            <h2 className='popup__title'>Sign up</h2>
             <form className='popup__form'>
                 <div className='popup__form-labels'>
                     <label className='popup__form-label'>

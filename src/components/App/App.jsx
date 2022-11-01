@@ -13,11 +13,21 @@ import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import Signup from "../Signup/Signup";
 import Navigation from "../Navigation/Navigation";
 import { NavContext } from "../../contexts/NavContext";
+import ToolTip from "../ToolTip/ToolTip";
 
 export default function App() {
     const [isPopupWithFormOpen, setPopupWithForm] = useState(false);
     const [isMobileNavOpen, setMobileNav] = useState(false);
     const [isRegistered, setRegister] = useState(true);
+    const popupToShow = () => {
+        if (isRegistered) {
+            return <Signin />;
+        } else if (!isRegistered) {
+            return <Signup />;
+        } else {
+            <ToolTip />;
+        }
+    };
 
     return (
         <PopupContext.Provider
@@ -25,9 +35,7 @@ export default function App() {
             <RegisterContext.Provider value={{ isRegistered, setRegister }}>
                 <NavContext.Provider value={{ isMobileNavOpen, setMobileNav }}>
                     <section className='app'>
-                        <PopupWithForm
-                            children={isRegistered ? <Signin /> : <Signup />}
-                        />
+                        <PopupWithForm children={popupToShow()} />
                         <Navigation />
                         <Top />
                         <Routes>

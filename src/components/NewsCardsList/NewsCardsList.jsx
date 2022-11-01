@@ -17,9 +17,8 @@ export default function NewsCardsList() {
             <ul className='news-list__articles'>
                 {news.map((article, index) => {
                     return (
-                        <li>
+                        <li key={index}>
                             <NewsCard
-                                key={index}
                                 image={article.image}
                                 date={article.date}
                                 title={article.title}
