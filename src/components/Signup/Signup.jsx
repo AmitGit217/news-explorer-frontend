@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useStore } from "../../store";
 import { useFormWithValidation } from "../../utils/helpHooks";
 import { signup } from "../../utils/user.hooks";
@@ -6,15 +6,23 @@ import { signup } from "../../utils/user.hooks";
 export default function Signup() {
     const { openTooltip } = useStore().tooltip;
     const { setRegisteredTrue } = useStore().userRegistration;
-    const { values, handleChange, errors, isValid, resetForm } =
-        useFormWithValidation();
+    const [dataExist, setDataExist] = useState({
+        exist: false,
+        message: "",
+    });
+    const { values, handleChange, errors, isValid } = useFormWithValidation();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const res = await signup(values);
         if (!res.message) {
             openTooltip();
+            return;
         }
+        setDataExist({ exist: true, message: res.message });
+        setTimeout(() => {
+            setDataExist({ exist: false, message: "" });
+        }, 2000);
     };
 
     return (
@@ -65,7 +73,9 @@ export default function Signup() {
                         </p>
                     </label>
                 </div>
-
+                <p className='popup__form-submit_type_error'>
+                    {dataExist.exist && dataExist.message}
+                </p>
                 <button
                     className={`popup__form-submit ${
                         !isValid && "popup__form-submit_disabled"
