@@ -5,7 +5,6 @@ import SavedNews from "../SavedNews/SavedNews";
 import "./App.css";
 import Top from "../Top/Top";
 import Footer from "../Footer/Footer";
-
 import Navigation from "../Navigation/Navigation";
 import { useCurrentPopup } from "../../utils/helpHooks";
 
