@@ -1,7 +1,10 @@
 import userActionsApi from "./MainApi";
 
-export const signup = (email, password, name) => {
-    userActionsApi
-        .signup(email, password, name)
-        .then((res) => console.log(res));
+export const signup = async (values) => {
+    try {
+        const res = await userActionsApi.signup(values);
+        return res;
+    } catch (err) {
+        return console.log(err);
+    }
 };

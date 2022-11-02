@@ -12,11 +12,11 @@ class UserActions {
         return await Promise.reject(`Error: ${res.status}`);
     }
 
-    signup(email, password, name) {
+    signup(values) {
         return this._connect(`${this.url}/signup`, {
             method: "POST",
             headers: this.headers,
-            body: JSON.stringify(email, password, name),
+            body: JSON.stringify(values),
         });
     }
 }

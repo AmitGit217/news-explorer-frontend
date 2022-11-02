@@ -9,11 +9,12 @@ export default function Signup() {
     const { values, handleChange, errors, isValid, resetForm } =
         useFormWithValidation();
 
-    const handleSubmit = (e) => {
-        const { email, password, name } = values;
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        signup(email, password, name);
-        // openTooltip();
+        const res = await signup(values);
+        if (!res.message) {
+            openTooltip();
+        }
     };
 
     return (
