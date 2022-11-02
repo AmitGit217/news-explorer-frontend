@@ -24,7 +24,6 @@ export const useCurrentPopup = () => {
     }
 };
 
-// hook for form control and form validation
 export function useFormWithValidation() {
     const [values, setValues] = useState({});
     const [errors, setErrors] = useState({});
@@ -36,7 +35,7 @@ export function useFormWithValidation() {
         const value = target.value;
         setValues({ ...values, [name]: value });
         setErrors({ ...errors, [name]: target.validationMessage });
-        setIsValid(target.closest("form").checkValidity());
+        setIsValid(target.closest(".popup__form").checkValidity());
     };
 
     const resetForm = useCallback(
