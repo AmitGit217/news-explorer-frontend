@@ -5,28 +5,12 @@ import SavedNews from "../SavedNews/SavedNews";
 import "./App.css";
 import Top from "../Top/Top";
 import Footer from "../Footer/Footer";
-import Signin from "../Signin/Signin";
-import PopupWithForm from "../PopupWithForm/PopupWithForm";
-import Signup from "../Signup/Signup";
+
 import Navigation from "../Navigation/Navigation";
-import Tooltip from "../Tooltip/Tooltip";
-import { useStore } from "../../store";
+import { useCurrentPopup } from "../../utils/helpHooks";
 
 export default function App() {
-    const { isRegistered } = useStore().userRegistration;
-    const { isTooltipOpen } = useStore().tooltip;
-
-    const popupToShow = () => {
-        if (isTooltipOpen) {
-            return <PopupWithForm children={<Tooltip />} />;
-        } else {
-            return (
-                <PopupWithForm
-                    children={isRegistered ? <Signin /> : <Signup />}
-                />
-            );
-        }
-    };
+    const popupToShow = useCurrentPopup();
 
     return (
         <section className='app'>
