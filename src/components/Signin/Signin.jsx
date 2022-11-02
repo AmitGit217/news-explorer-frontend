@@ -1,36 +1,56 @@
 import React from "react";
 import { useStore } from "../../store";
+import { useFormWithValidation } from "../../utils/helpHooks";
 
 export default function Signin() {
     const { setRegisteredFalse } = useStore().userRegistration;
+    const { values, handleChange, errors, isValid, resetForm } =
+        useFormWithValidation();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    };
 
     return (
         <>
             <h2 className='popup__title'>Sign in</h2>
-            <form className='popup__form'>
+            <form className='popup__form' onSubmit={handleSubmit}>
                 <div className='popup__form-labels'>
                     <label className='popup__form-label'>
                         Email:
                         <input
+                            name='email'
                             className='popup__form-input'
                             type='email'
                             placeholder='Enter email'
+                            onChange={handleChange}
                             required
                         />
-                        <p className='popup__form-input_type_error'></p>
+                        <p className='popup__form-input_type_error'>
+                            {errors.email && "Invalid email address"}
+                        </p>
                     </label>
                     <label className='popup__form-label'>
                         Password:
                         <input
+                            name='password'
                             placeholder='Enter password'
                             className='popup__form-input'
                             type='password'
+                            onChange={handleChange}
                             required
                         />
-                        <p className='popup__form-input_type_error'></p>
+                        <p className='popup__form-input_type_error'>
+                            {errors.password}
+                        </p>
                     </label>
                 </div>
-                <button className='popup__form-submit' type='submit'>
+                <button
+                    className={`popup__form-submit  ${
+                        !isValid && "popup__form-submit_disabled"
+                    }`}
+                    type='submit'
+                    disabled={isValid ? false : true}>
                     Sign in
                 </button>
                 <p className='popup__form-nav'>
