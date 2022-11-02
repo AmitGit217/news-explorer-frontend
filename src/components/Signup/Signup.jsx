@@ -1,6 +1,7 @@
 import React from "react";
 import { useStore } from "../../store";
 import { useFormWithValidation } from "../../utils/helpHooks";
+import { signup } from "../../utils/user.hooks";
 
 export default function Signup() {
     const { openTooltip } = useStore().tooltip;
@@ -9,8 +10,10 @@ export default function Signup() {
         useFormWithValidation();
 
     const handleSubmit = (e) => {
+        const { email, password, name } = values;
         e.preventDefault();
-        openTooltip();
+        signup(email, password, name);
+        // openTooltip();
     };
 
     return (
