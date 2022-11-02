@@ -1,15 +1,14 @@
 import React from "react";
-import { useContext } from "react";
-import { RegisterContext } from "../../contexts/RegisterContext";
-import { TooltipContext } from "../../contexts/TooltipContext";
+import { useStore } from "../../store";
 
 export default function Tooltip() {
-    const { setTooltip } = useContext(TooltipContext);
-    const { setRegister } = useContext(RegisterContext);
+    const { closeTooltip } = useStore().tooltip;
+    const { setRegisteredTrue } = useStore().userRegistration;
     const navigateToForm = () => {
-        setTooltip(false);
-        setRegister(true);
+        closeTooltip();
+        setRegisteredTrue();
     };
+
     return (
         <>
             <h2 className='popup__title'>

@@ -1,24 +1,23 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./Navigation.css";
-import { NavContext } from "../../contexts/NavContext";
-import { PopupContext } from "../../contexts/PopupContext";
 import { useNavigate } from "react-router-dom";
+import { useStore } from "../../store";
 
 export default function Navigation() {
     const navigate = useNavigate();
-    const { setPopupWithForm } = useContext(PopupContext);
-    const { isMobileNavOpen, setMobileNav } = useContext(NavContext);
+    const { openPopup } = useStore().popupWithForm;
+    const { isMobileNavOpen, closeMobileNav } = useStore().mobileNav;
 
     const openFormPopup = () => {
-        setPopupWithForm(true);
-        setMobileNav(false);
+        openPopup();
+        closeMobileNav();
     };
     const backHome = () => {
         navigate("/");
-        setMobileNav(false);
+        closeMobileNav();
     };
     const goToSavedArticlesPage = () => {
-        setMobileNav(false);
+        closeMobileNav();
         navigate("/saved-news");
     };
 
@@ -30,7 +29,7 @@ export default function Navigation() {
                     <button
                         className='popup-nav__exit'
                         type='button'
-                        onClick={() => setMobileNav(false)}
+                        onClick={closeMobileNav}
                     />
                 </div>
                 <div className='popup-nav__bottom'>

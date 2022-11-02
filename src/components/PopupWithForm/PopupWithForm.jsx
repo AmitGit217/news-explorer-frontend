@@ -1,23 +1,21 @@
-import React, { useContext } from "react";
-import { PopupContext } from "../../contexts/PopupContext";
+import React from "react";
 import "./PopupWithForm.css";
-import { useCloseFromEsc } from "../../utils/functions";
-import { RegisterContext } from "../../contexts/RegisterContext";
-import { TooltipContext } from "../../contexts/TooltipContext";
+import { useCloseFromEsc } from "../../utils/helpHooks";
+import { useStore } from "../../store";
 
 export default function PopupWithForm({ children }) {
-    const { setRegister } = useContext(RegisterContext);
-    const { setTooltip } = useContext(TooltipContext);
-    const { isPopupWithFormOpen, setPopupWithForm } = useContext(PopupContext);
+    const { isPopupWithFormOpen, closePopup } = useStore().popupWithForm;
+    const { setRegisteredTrue } = useStore().userRegistration;
+    const { closeTooltip } = useStore().tooltip;
+
     const closePopupWithForm = () => {
-        setPopupWithForm(false);
+        closePopup();
         setTimeout(() => {
-            setTooltip(false);
-            setRegister(true);
+            closeTooltip();
+            setRegisteredTrue();
         }, 200);
     };
-
-    useCloseFromEsc(setPopupWithForm);
+    useCloseFromEsc(closePopup);
 
     return (
         <div

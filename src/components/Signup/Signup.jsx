@@ -1,14 +1,13 @@
 import React from "react";
-import { useContext } from "react";
-import { RegisterContext } from "../../contexts/RegisterContext";
-import { TooltipContext } from "../../contexts/TooltipContext";
+import { useStore } from "../../store";
 
 export default function Signup() {
-    const { setTooltip } = useContext(TooltipContext);
-    const { setRegister } = useContext(RegisterContext);
+    const { openTooltip } = useStore().tooltip;
+    const { setRegisteredTrue } = useStore().userRegistration;
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        setTooltip(true);
+        openTooltip();
     };
     return (
         <>
@@ -54,7 +53,7 @@ export default function Signup() {
                     or{" "}
                     <span
                         className='popup__form-nav_action'
-                        onClick={() => setRegister(true)}>
+                        onClick={setRegisteredTrue}>
                         Sign in
                     </span>
                 </p>

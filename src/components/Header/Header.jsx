@@ -1,13 +1,11 @@
 import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { PopupContext } from "../../contexts/PopupContext";
-import { NavContext } from "../../contexts/NavContext";
+import { useStore } from "../../store";
 
 export default function Header() {
-    const { setPopupWithForm } = useContext(PopupContext);
-    const { setMobileNav } = useContext(NavContext);
+    const { openPopup } = useStore().popupWithForm;
+    const { openMobileNav } = useStore().mobileNav;
 
     return (
         <header className='header'>
@@ -15,7 +13,7 @@ export default function Header() {
             <button
                 className='header__burger'
                 type='button'
-                onClick={() => setMobileNav(true)}
+                onClick={openMobileNav}
             />
             <nav className='header__nav'>
                 <Link
@@ -29,7 +27,7 @@ export default function Header() {
                     Saved articles
                 </Link>
                 <button
-                    onClick={() => setPopupWithForm(true)}
+                    onClick={openPopup}
                     className='header__button header__button_type_signin'
                     type='button'>
                     Sign in

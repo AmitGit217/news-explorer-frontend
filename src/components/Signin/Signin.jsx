@@ -1,9 +1,8 @@
 import React from "react";
-import { useContext } from "react";
-import { RegisterContext } from "../../contexts/RegisterContext";
+import { useStore } from "../../store";
 
 export default function Signin() {
-    const { setRegister } = useContext(RegisterContext);
+    const { setRegisteredFalse } = useStore().userRegistration;
 
     return (
         <>
@@ -38,7 +37,7 @@ export default function Signin() {
                     or{" "}
                     <span
                         className='popup__form-nav_action'
-                        onClick={() => setRegister(false)}>
+                        onClick={setRegisteredFalse}>
                         Sign up
                     </span>
                 </p>
