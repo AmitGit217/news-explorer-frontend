@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import { useStore } from "../../store";
-import PopupWithForm from "../PopupWithForm/PopupWithForm";
-import Tooltip from "../Tooltip/Tooltip";
-import Signup from "../Signup/Signup";
-import Signin from "../Signin/Signin";
+import { useStore } from "../store";
+import PopupWithForm from "../components/PopupWithForm/PopupWithForm";
+import Tooltip from "../components/Tooltip/Tooltip";
+import Signup from "../components/Signup/Signup";
+import Signin from "../components/Signin/Signin";
 
 export const useCloseFromEsc = (setter) => {
     useEffect(() => {

@@ -14,7 +14,7 @@ export default function App() {
 
     return (
         <section className='app'>
-            {popupToShow()}
+            {popupToShow}
             <Navigation />
             <Top />
             <Routes>
