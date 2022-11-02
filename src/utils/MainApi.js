@@ -21,9 +21,9 @@ class UserActions {
     }
 }
 
-const userActions = new UserActions({
+const userActionsApi = new UserActions({
     url: "https://news-api.eastus.cloudapp.azure.com",
     headers: { "Content-Type": "application/json" },
 });
 
-export default userActions;
+export default userActionsApi;

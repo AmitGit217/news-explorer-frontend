@@ -1,5 +1,7 @@
-import userActions from "./user.api";
+import userActionsApi from "./MainApi";
 
 export const signup = (email, password, name) => {
-    userActions.signup(email, password, name).then((res) => console.log(res));
+    userActionsApi
+        .signup(email, password, name)
+        .then((res) => console.log(res));
 };
