@@ -13,14 +13,18 @@ import { useEffect } from "react";
 
 export default function App() {
     const popupToShow = useCurrentPopup();
-    const { isLoggedIn, checkLocalToken, setCurrentUser } =
+    const { isLoggedIn, checkLocalToken, setCurrentUser, logoutCurrentUser } =
         useStore().currentUser;
 
     useEffect(() => {
         const getUserFromLocalHost = async () => {
             const token = localStorage.getItem("token");
-            const res = await checkLocalToken(token);
-            setCurrentUser(res);
+            if (token) {
+                const res = await checkLocalToken(token);
+                setCurrentUser(res);
+            } else {
+                logoutCurrentUser();
+            }
         };
         getUserFromLocalHost();
     }, []);
@@ -36,7 +40,7 @@ export default function App() {
                     element={
                         <ProtectedRoute
                             children={<SavedNews />}
-                            isLoggedIn={setTimeout(() => isLoggedIn, 1000)}
+                            isLoggedIn={isLoggedIn}
                         />
                     }
                 />

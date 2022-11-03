@@ -6,8 +6,13 @@ import { useStore } from "../../store";
 export default function Header() {
     const { openPopup } = useStore().popupWithForm;
     const { openMobileNav } = useStore().mobileNav;
-    const { isLoggedIn } = useStore().currentUser;
+    const { isLoggedIn, currentUser, logoutCurrentUser } =
+        useStore().currentUser;
 
+    const logout = () => {
+        logoutCurrentUser();
+        localStorage.removeItem("token");
+    };
     return (
         <header className='header'>
             <div className='header__title' />
@@ -31,10 +36,10 @@ export default function Header() {
                 )}
 
                 <button
-                    onClick={openPopup}
+                    onClick={isLoggedIn ? logout : openPopup}
                     className='header__button header__button_type_signin'
                     type='button'>
-                    Sign in
+                    {isLoggedIn ? currentUser.name : "Signin"}
                 </button>
             </nav>
         </header>

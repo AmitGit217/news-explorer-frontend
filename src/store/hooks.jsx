@@ -30,7 +30,7 @@ export const useTooltip = () => {
 };
 
 export const useCurrentUser = () => {
-    const [isLoggedIn, setLoggedIn] = useState(false);
+    const [isLoggedIn, setLoggedIn] = useState(true);
     const [currentUser, setter] = useState({});
     const setCurrentUser = (values) => {
         setter({ ...values });
