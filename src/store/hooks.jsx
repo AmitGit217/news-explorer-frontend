@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { checkToken } from "../utils/MainApi/user.hooks";
+import { checkToken } from "../utils/MainApi/MainApi.actions";
 
 export const usePopupWithFrom = () => {
     const [isPopupWithFormOpen, setPopupWithForm] = useState(false);

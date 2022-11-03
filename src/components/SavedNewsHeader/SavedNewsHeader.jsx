@@ -35,7 +35,8 @@ export default function SavedNewsHeader() {
                     <img
                         className='saved-news-header__logout-icon'
                         src={logoutIcon}
-                        alt='logout icon'></img>
+                        alt='logout icon'
+                    />
                 </div>
             </nav>
         </header>

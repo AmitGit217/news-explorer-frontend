@@ -56,6 +56,10 @@
     height: 50px;
     text-align: center;
     transition: 0.1s;
+    display: flex;
+    gap: 25px;
+}
+.header__logout-icon {
 }
 
 .header__button_type_signin:hover {

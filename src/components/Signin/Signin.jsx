@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useStore } from "../../store";
 import { useFormWithValidation } from "../../utils/helpHooks";
-import { signin } from "../../utils/MainApi/user.hooks";
+import { signin } from "../../utils/MainApi/MainApi.actions";
 
 export default function Signin() {
+    const [error, setError] = useState("");
     const { setCurrentUser } = useStore().currentUser;
     const { setRegisteredFalse } = useStore().userRegistration;
     const { closePopup } = useStore().popupWithForm;
@@ -17,6 +18,11 @@ export default function Signin() {
             localStorage.setItem("token", res.token);
             setCurrentUser(user);
             closePopup();
+        } else {
+            setError(res.message);
+            setTimeout(() => {
+                setError("");
+            }, 2000);
         }
     };
 
@@ -54,6 +60,7 @@ export default function Signin() {
                         </p>
                     </label>
                 </div>
+                <p className='popup__form-submit_type_error'>{error}</p>
                 <button
                     className={`popup__form-submit  ${
                         !isValid && "popup__form-submit_disabled"
