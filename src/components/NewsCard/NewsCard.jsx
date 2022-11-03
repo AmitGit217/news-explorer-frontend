@@ -1,6 +1,7 @@
 import React from "react";
 import "./NewsCard.css";
 import { useState } from "react";
+import { useStore } from "../../store";
 
 export default function NewsCard({
     title,
@@ -12,6 +13,7 @@ export default function NewsCard({
 }) {
     // Temporary state visualization before API connection
     const [tempIsSaved, setTempIsSaved] = useState(false);
+    const { isLoggedIn } = useStore().currentUser;
     return (
         <article className='news-card'>
             <img className='news-card__image' src={image} alt={title} />
@@ -31,9 +33,11 @@ export default function NewsCard({
                             : "news-card__archive-image"
                     }`}
                 />
-                <p className='news-card__archive-popup'>
-                    Sign in to save articles
-                </p>
+                {!isLoggedIn && (
+                    <p className='news-card__archive-popup'>
+                        Sign in to save articles
+                    </p>
+                )}
             </span>
         </article>
     );
