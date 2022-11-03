@@ -10,7 +10,6 @@ export default function SavedNews() {
     useEffect(() => {
         getSavedCards();
     }, []);
-    console.log(savedCards);
 
     return (
         <section className='saved-news'>
@@ -23,7 +22,7 @@ export default function SavedNews() {
                 </p>
             </div>
             <ul className='saved-news__articles'>
-                {savedCards.map((article, index) => {
+                {savedCards?.map((article, index) => {
                     return (
                         <li key={index}>
                             <SavedNewsCard
@@ -34,6 +33,7 @@ export default function SavedNews() {
                                 text={article.text}
                                 source={article.source}
                                 keyword={article.keyword}
+                                currentCard={article}
                             />
                         </li>
                     );

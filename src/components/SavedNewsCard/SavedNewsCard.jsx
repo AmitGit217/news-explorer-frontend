@@ -1,5 +1,7 @@
 import React from "react";
+import { deleteArticleById } from "../../utils/MainApi/MainApi.actions";
 import "./SavedNewsCard.css";
+import { useStore } from "../../store";
 
 export default function SavedNewsCard({
     title,
@@ -8,7 +10,18 @@ export default function SavedNewsCard({
     image,
     source,
     keyword,
+    currentCard,
 }) {
+    const { getSavedCards } = useStore().currentUser;
+
+    const deleteCard = async () => {
+        const res = await deleteArticleById(currentCard._id);
+        if (res._id) {
+            getSavedCards();
+        }
+        console.log(res);
+    };
+
     return (
         <article className='saved-news-card'>
             <img className='saved-news-card__image' src={image} alt={title} />
@@ -21,6 +34,7 @@ export default function SavedNewsCard({
             <span className='saved-news-card__trash'>
                 <button
                     type='button'
+                    onClick={deleteCard}
                     className='saved-news-card__trash-image'
                 />
                 <p className='saved-news-card__remove-popup'>

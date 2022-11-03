@@ -53,6 +53,13 @@ class UserActions {
             headers: this.headers,
         });
     }
+
+    deleteArticleById(id) {
+        return this._connect(`${this.url}/articles/${id}`, {
+            method: "DELETE",
+            headers: this.headers,
+        });
+    }
 }
 
 const userActionsApi = new UserActions({

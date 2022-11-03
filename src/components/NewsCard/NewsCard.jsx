@@ -1,6 +1,5 @@
 import React from "react";
 import "./NewsCard.css";
-import { useState } from "react";
 import { useStore } from "../../store";
 import { saveArticle } from "../../utils/MainApi/MainApi.actions";
 
@@ -10,16 +9,13 @@ export default function NewsCard({
     date,
     image,
     source,
-    isSaved,
     currentCard,
 }) {
-    // Temporary state visualization before API connection
-    const [tempIsSaved, setTempIsSaved] = useState(false);
     const { search } = useStore().newsCards;
-    const { isLoggedIn } = useStore().currentUser;
+    const { isLoggedIn, savedCards, getSavedCards } = useStore().currentUser;
     const realDate = new Date(date);
 
-    const saveCard = () => {
+    const saveCard = async () => {
         saveArticle({
             title,
             text,
@@ -29,7 +25,10 @@ export default function NewsCard({
             link: currentCard.url,
             keyword: search,
         });
+        getSavedCards();
     };
+    const isSaved = savedCards.some((card) => card.title === currentCard.title);
+    const disable = !isLoggedIn || isSaved;
 
     return (
         <article className='news-card'>
@@ -44,9 +43,9 @@ export default function NewsCard({
                 <button
                     onClick={saveCard}
                     type='button'
-                    disabled={isLoggedIn ? false : true}
+                    disabled={disable}
                     className={` ${
-                        tempIsSaved
+                        isSaved
                             ? "news-card__archive-image_saved"
                             : "news-card__archive-image"
                     }`}

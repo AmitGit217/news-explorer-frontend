@@ -44,3 +44,12 @@ export const getUserArticles = async () => {
         return console.log(err);
     }
 };
+
+export const deleteArticleById = async (id) => {
+    try {
+        const res = await userActionsApi.deleteArticleById(id);
+        return res;
+    } catch (err) {
+        return console.log(err);
+    }
+};

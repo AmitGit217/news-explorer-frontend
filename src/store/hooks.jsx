@@ -50,7 +50,11 @@ export const useCurrentUser = () => {
 
     const getSavedCards = async () => {
         const cards = await getUserArticles();
-        setCards(cards);
+        if (!cards.message) {
+            setCards(cards);
+        } else {
+            setCards([]);
+        }
     };
     return {
         currentUser,
