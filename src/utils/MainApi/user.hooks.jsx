@@ -8,3 +8,12 @@ export const signup = async (values) => {
         return console.log(err);
     }
 };
+
+export const signin = async (values) => {
+    try {
+        const res = await userActionsApi.signin(values);
+        return res;
+    } catch (err) {
+        return console.log(err);
+    }
+};

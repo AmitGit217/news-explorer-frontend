@@ -1,14 +1,19 @@
 import React from "react";
 import { useStore } from "../../store";
 import { useFormWithValidation } from "../../utils/helpHooks";
+import { signin } from "../../utils/MainApi/user.hooks";
 
 export default function Signin() {
     const { setRegisteredFalse } = useStore().userRegistration;
     const { values, handleChange, errors, isValid, resetForm } =
         useFormWithValidation();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        const res = await signin(values);
+        if (!res.message) {
+            localStorage.setItem("token", res.token);
+        }
     };
 
     return (
