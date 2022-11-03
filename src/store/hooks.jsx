@@ -27,3 +27,17 @@ export const useTooltip = () => {
     const closeTooltip = () => setTooltip(false);
     return { isTooltipOpen, openTooltip, closeTooltip };
 };
+
+export const useCurrentUser = () => {
+    const [isLoggedIn, setLoggedIn] = useState(false);
+    const [currentUser, setter] = useState({});
+    const setCurrentUser = (values) => {
+        setter({ ...values });
+        setLoggedIn(true);
+    };
+    const logoutCurrentUser = () => {
+        setter({});
+        setLoggedIn(false);
+    };
+    return { currentUser, isLoggedIn, setCurrentUser, logoutCurrentUser };
+};

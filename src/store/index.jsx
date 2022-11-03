@@ -4,6 +4,7 @@ import {
     useUserRegistration,
     useMobileNav,
     useTooltip,
+    useCurrentUser,
 } from "./hooks";
 
 const GlobalContext = createContext({});
@@ -13,7 +14,14 @@ export const StoreProvider = ({ children }) => {
     const userRegistration = useUserRegistration();
     const mobileNav = useMobileNav();
     const tooltip = useTooltip();
-    const store = { popupWithForm, userRegistration, mobileNav, tooltip };
+    const currentUser = useCurrentUser();
+    const store = {
+        popupWithForm,
+        userRegistration,
+        mobileNav,
+        tooltip,
+        currentUser,
+    };
     return (
         <GlobalContext.Provider value={store}>
             {children}

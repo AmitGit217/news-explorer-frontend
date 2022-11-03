@@ -4,15 +4,19 @@ import { useFormWithValidation } from "../../utils/helpHooks";
 import { signin } from "../../utils/MainApi/user.hooks";
 
 export default function Signin() {
+    const { setCurrentUser } = useStore().currentUser;
     const { setRegisteredFalse } = useStore().userRegistration;
-    const { values, handleChange, errors, isValid, resetForm } =
-        useFormWithValidation();
+    const { closePopup } = useStore().popupWithForm;
+    const { values, handleChange, errors, isValid } = useFormWithValidation();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const res = await signin(values);
-        if (!res.message) {
+        if (res.token) {
+            const { user } = res;
             localStorage.setItem("token", res.token);
+            setCurrentUser(user);
+            closePopup();
         }
     };
 
