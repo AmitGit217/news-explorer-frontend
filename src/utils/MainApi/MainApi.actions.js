@@ -26,3 +26,21 @@ export const checkToken = async (token) => {
         return console.log(err);
     }
 };
+
+export const saveArticle = async (article) => {
+    try {
+        const res = await userActionsApi.saveArticle(article);
+        return res;
+    } catch (err) {
+        return console.log(err);
+    }
+};
+
+export const getUserArticles = async () => {
+    try {
+        const res = await userActionsApi.getUserArticles();
+        return res;
+    } catch (err) {
+        return console.log(err);
+    }
+};

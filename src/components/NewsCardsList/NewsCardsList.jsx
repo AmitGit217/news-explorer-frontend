@@ -34,6 +34,7 @@ export default function NewsCardsList() {
                                         title={article.title}
                                         text={article.content}
                                         source={article.source.name}
+                                        currentCard={article}
                                     />
                                 </li>
                             );

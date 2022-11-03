@@ -19,7 +19,7 @@ export default function SearchForm() {
         setIsLoading();
         const apiCards = await getCardsFromApi(search.keyword);
         if (apiCards.length) {
-            getCards(apiCards);
+            getCards(apiCards, search.keyword);
         } else {
             setNotFound();
         }

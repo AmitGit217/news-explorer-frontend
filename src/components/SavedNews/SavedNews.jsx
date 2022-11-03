@@ -1,11 +1,17 @@
 import React from "react";
 import "./SavedNews.css";
 import SavedNewsCard from "../SavedNewsCard/SavedNewsCard";
-import { savedNews } from "../../db/news-temp.js";
 import { useStore } from "../../store";
+import { useEffect } from "react";
 
 export default function SavedNews() {
-    const { currentUser } = useStore().currentUser;
+    const { currentUser, savedCards, getSavedCards } = useStore().currentUser;
+
+    useEffect(() => {
+        getSavedCards();
+    }, []);
+    console.log(savedCards);
+
     return (
         <section className='saved-news'>
             <div className='saved-news__text'>
@@ -17,7 +23,7 @@ export default function SavedNews() {
                 </p>
             </div>
             <ul className='saved-news__articles'>
-                {savedNews.map((article, index) => {
+                {savedCards.map((article, index) => {
                     return (
                         <li key={index}>
                             <SavedNewsCard

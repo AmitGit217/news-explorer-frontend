@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { checkToken } from "../utils/MainApi/MainApi.actions";
+import { checkToken, getUserArticles } from "../utils/MainApi/MainApi.actions";
 
 export const usePopupWithFrom = () => {
     const [isPopupWithFormOpen, setPopupWithForm] = useState(false);
@@ -32,6 +32,7 @@ export const useTooltip = () => {
 export const useCurrentUser = () => {
     const [isLoggedIn, setLoggedIn] = useState(true);
     const [currentUser, setter] = useState({});
+    const [savedCards, setCards] = useState([]);
     const setCurrentUser = (values) => {
         setter({ ...values });
         setLoggedIn(true);
@@ -46,23 +47,32 @@ export const useCurrentUser = () => {
         setLoggedIn(false);
         localStorage.removeItem("token");
     };
+
+    const getSavedCards = async () => {
+        const cards = await getUserArticles();
+        setCards(cards);
+    };
     return {
         currentUser,
         isLoggedIn,
         setCurrentUser,
         logoutCurrentUser,
         checkLocalToken,
+        getSavedCards,
+        savedCards,
     };
 };
 
 export const useCards = () => {
+    const [search, setKeyword] = useState("");
     const [notFound, setNotFoundFromApi] = useState(false);
     const [isLoading, loadingSetter] = useState(false);
     const [cards, setter] = useState([]);
 
-    const getCards = (apiCards) => {
+    const getCards = (apiCards, keyWord) => {
         setter(apiCards);
         setNotFoundFromApi(false);
+        setKeyword(keyWord);
     };
     const setNotFound = () => {
         setNotFoundFromApi(true);
@@ -84,5 +94,6 @@ export const useCards = () => {
         setIsLoading,
         removeIsLoading,
         isLoading,
+        search,
     };
 };

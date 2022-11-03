@@ -39,11 +39,28 @@ class UserActions {
             },
         });
     }
+
+    saveArticle(article) {
+        return this._connect(`${this.url}/articles`, {
+            method: "POST",
+            headers: this.headers,
+            body: JSON.stringify(article),
+        });
+    }
+
+    getUserArticles() {
+        return this._connect(`${this.url}/articles`, {
+            headers: this.headers,
+        });
+    }
 }
 
 const userActionsApi = new UserActions({
     url: "https://news-api.eastus.cloudapp.azure.com",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
 });
 
 export default userActionsApi;
