@@ -57,6 +57,7 @@ export const useCurrentUser = () => {
 
 export const useCards = () => {
     const [notFound, setNotFoundFromApi] = useState(false);
+    const [isLoading, loadingSetter] = useState(false);
     const [cards, setter] = useState([]);
 
     const getCards = (apiCards) => {
@@ -68,5 +69,20 @@ export const useCards = () => {
         setter([]);
     };
 
-    return { cards, getCards, notFound, setNotFound };
+    const setIsLoading = () => {
+        loadingSetter(true);
+        setNotFoundFromApi(false);
+        setter([]);
+    };
+    const removeIsLoading = () => loadingSetter(false);
+
+    return {
+        cards,
+        getCards,
+        notFound,
+        setNotFound,
+        setIsLoading,
+        removeIsLoading,
+        isLoading,
+    };
 };
