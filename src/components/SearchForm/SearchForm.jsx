@@ -1,21 +1,26 @@
 import React from "react";
 import "./SearchForm.css";
-import { getCards } from "../../utils/NewsApi/NewsApi.actions";
+import { useStore } from "../../store";
 import { useState } from "react";
+import { getCardsFromApi } from "../../utils/NewsApi/NewsApi.actions";
 
 export default function SearchForm() {
-    const [keyword, setKeyword] = useState("");
+    const [search, setKeyword] = useState("");
+    const { cards, getCards } = useStore().newsCards;
 
     const handleChange = (e) => {
         const { value, name } = e.target;
-        setKeyword({ ...keyword, [name]: value });
+        setKeyword({ ...search, [name]: value });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const cards = await getCards(keyword.search);
-        console.log(cards);
+        const apiCards = await getCardsFromApi(search.keyword);
+        if (apiCards) {
+            getCards(apiCards);
+        }
     };
+
     return (
         <section className='search-form'>
             <div className='search-form__text'>
@@ -32,7 +37,7 @@ export default function SearchForm() {
                     className='search-form__search-text'
                     type='text'
                     placeholder='Enter topic'
-                    name='search'
+                    name='keyword'
                     onChange={handleChange}
                 />
                 <button className='search-form__search-button' type='submit'>

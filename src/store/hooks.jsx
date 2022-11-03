@@ -54,3 +54,13 @@ export const useCurrentUser = () => {
         checkLocalToken,
     };
 };
+
+export const useCards = () => {
+    const [cards, setter] = useState([]);
+
+    const getCards = (apiCards) => {
+        setter(apiCards);
+    };
+
+    return { cards, getCards };
+};

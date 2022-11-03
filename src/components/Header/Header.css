@@ -59,8 +59,6 @@
     display: flex;
     gap: 25px;
 }
-.header__logout-icon {
-}
 
 .header__button_type_signin:hover {
     background: #ffffff21;

@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./NewsCardsList.css";
-import { news } from "../../db/news-temp.js";
 import NewsCard from "../NewsCard/NewsCard";
 import Preloader from "../Preloader/Preloader";
+import { useStore } from "../../store";
 
 export default function NewsCardsList() {
+    const { cards } = useStore().newsCards;
+    const [cardsToShow, setCardsToShow] = useState(3);
+
     return (
         <section className='news-list'>
             <Preloader />
@@ -18,21 +21,24 @@ export default function NewsCardsList() {
 
             <h2 className='news-list__title'>Search results</h2>
             <ul className='news-list__articles'>
-                {news.map((article, index) => {
+                {cards.slice(0, cardsToShow).map((article, index) => {
                     return (
                         <li key={index}>
                             <NewsCard
-                                image={article.image}
-                                date={article.date}
+                                image={article.urlToImage}
+                                date={article.publishedAt}
                                 title={article.title}
-                                text={article.text}
-                                source={article.source}
+                                text={article.content}
+                                source={article.source.name}
                             />
                         </li>
                     );
                 })}
             </ul>
-            <button className='news-list__show-more' type='button'>
+            <button
+                className='news-list__show-more'
+                type='button'
+                onClick={() => setCardsToShow((prev) => (prev += 3))}>
                 Show more
             </button>
         </section>
