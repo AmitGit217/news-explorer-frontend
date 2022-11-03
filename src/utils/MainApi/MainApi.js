@@ -19,6 +19,17 @@ class UserActions {
             body: JSON.stringify(values),
         });
     }
+
+    signin(values) {
+        return this._connect(`${this.url}/signin`, {
+            method: "POST",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(values),
+        });
+    }
 }
 
 const userActionsApi = new UserActions({

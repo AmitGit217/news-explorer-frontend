@@ -1,6 +1,6 @@
 import React from "react";
 import "./SearchForm.css";
-import { getCards } from "../../utils/news.hooks";
+import { getCards } from "../../utils/NewsApi/news.hooks";
 import { useState } from "react";
 
 export default function SearchForm() {
