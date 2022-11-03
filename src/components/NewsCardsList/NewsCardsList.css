@@ -53,9 +53,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    visibility: hidden;
-    opacity: 1;
-    display: none;
+    padding: 5% 104px;
+    background: #f5f6f7;
 }
 .news-list__not-found-image {
     margin: 0;

@@ -56,11 +56,17 @@ export const useCurrentUser = () => {
 };
 
 export const useCards = () => {
+    const [notFound, setNotFoundFromApi] = useState(false);
     const [cards, setter] = useState([]);
 
     const getCards = (apiCards) => {
         setter(apiCards);
+        setNotFoundFromApi(false);
+    };
+    const setNotFound = () => {
+        setNotFoundFromApi(true);
+        setter([]);
     };
 
-    return { cards, getCards };
+    return { cards, getCards, notFound, setNotFound };
 };

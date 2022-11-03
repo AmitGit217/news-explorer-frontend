@@ -6,7 +6,7 @@ import { getCardsFromApi } from "../../utils/NewsApi/NewsApi.actions";
 
 export default function SearchForm() {
     const [search, setKeyword] = useState("");
-    const { cards, getCards } = useStore().newsCards;
+    const { getCards, setNotFound } = useStore().newsCards;
 
     const handleChange = (e) => {
         const { value, name } = e.target;
@@ -16,8 +16,10 @@ export default function SearchForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const apiCards = await getCardsFromApi(search.keyword);
-        if (apiCards) {
+        if (apiCards.length) {
             getCards(apiCards);
+        } else {
+            setNotFound();
         }
     };
 
