@@ -17,3 +17,12 @@ export const signin = async (values) => {
         return console.log(err);
     }
 };
+
+export const checkToken = async (token) => {
+    try {
+        const res = await userActionsApi.checkToken(token);
+        return res;
+    } catch (err) {
+        return console.log(err);
+    }
+};

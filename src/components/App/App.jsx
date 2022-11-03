@@ -7,9 +7,23 @@ import Top from "../Top/Top";
 import Footer from "../Footer/Footer";
 import Navigation from "../Navigation/Navigation";
 import { useCurrentPopup } from "../../utils/helpHooks";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import { useStore } from "../../store";
+import { useEffect } from "react";
 
 export default function App() {
     const popupToShow = useCurrentPopup();
+    const { isLoggedIn, checkLocalToken, setCurrentUser } =
+        useStore().currentUser;
+
+    useEffect(() => {
+        const getUserFromLocalHost = async () => {
+            const token = localStorage.getItem("token");
+            const res = await checkLocalToken(token);
+            setCurrentUser(res);
+        };
+        getUserFromLocalHost();
+    }, []);
 
     return (
         <section className='app'>
@@ -17,8 +31,16 @@ export default function App() {
             <Navigation />
             <Top />
             <Routes>
+                <Route
+                    path='/saved-news'
+                    element={
+                        <ProtectedRoute
+                            children={<SavedNews />}
+                            isLoggedIn={setTimeout(() => isLoggedIn, 1000)}
+                        />
+                    }
+                />
                 <Route path='/' element={<Main />} />
-                <Route path='/saved-news' element={<SavedNews />} />
             </Routes>
             <Footer />
         </section>

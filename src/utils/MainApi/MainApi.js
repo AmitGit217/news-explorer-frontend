@@ -30,6 +30,15 @@ class UserActions {
             body: JSON.stringify(values),
         });
     }
+
+    checkToken(token) {
+        return this._connect(`${this.url}/users/me`, {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+        });
+    }
 }
 
 const userActionsApi = new UserActions({

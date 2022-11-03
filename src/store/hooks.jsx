@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { checkToken } from "../utils/MainApi/user.hooks";
 
 export const usePopupWithFrom = () => {
     const [isPopupWithFormOpen, setPopupWithForm] = useState(false);
@@ -35,9 +36,20 @@ export const useCurrentUser = () => {
         setter({ ...values });
         setLoggedIn(true);
     };
+
+    const checkLocalToken = async (token) => {
+        const res = await checkToken(token);
+        return res;
+    };
     const logoutCurrentUser = () => {
         setter({});
         setLoggedIn(false);
     };
-    return { currentUser, isLoggedIn, setCurrentUser, logoutCurrentUser };
+    return {
+        currentUser,
+        isLoggedIn,
+        setCurrentUser,
+        logoutCurrentUser,
+        checkLocalToken,
+    };
 };
