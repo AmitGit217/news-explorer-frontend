@@ -9,11 +9,6 @@ export default function Header() {
     const { openMobileNav } = useStore().mobileNav;
     const { isLoggedIn, currentUser, logoutCurrentUser } =
         useStore().currentUser;
-
-    const logout = () => {
-        logoutCurrentUser();
-        localStorage.removeItem("token");
-    };
     return (
         <header className='header'>
             <div className='header__title' />
@@ -37,7 +32,7 @@ export default function Header() {
                 )}
 
                 <button
-                    onClick={isLoggedIn ? logout : openPopup}
+                    onClick={isLoggedIn ? logoutCurrentUser : openPopup}
                     className='header__button header__button_type_signin'
                     type='button'>
                     {isLoggedIn ? currentUser.name : "Signin"}

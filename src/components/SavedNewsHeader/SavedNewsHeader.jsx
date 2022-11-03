@@ -7,6 +7,7 @@ import { useStore } from "../../store";
 
 export default function SavedNewsHeader() {
     const { openMobileNav } = useStore().mobileNav;
+    const { currentUser, logoutCurrentUser } = useStore().currentUser;
     return (
         <header className='saved-news-header'>
             <div className='saved-news-header__title' />
@@ -29,8 +30,9 @@ export default function SavedNewsHeader() {
                 <div className='saved-news-header__logout'>
                     <button
                         className='saved-news-header__button saved-news-header__logout-button'
-                        type='button'>
-                        Elise
+                        type='button'
+                        onClick={logoutCurrentUser}>
+                        {currentUser.name}
                     </button>
                     <img
                         className='saved-news-header__logout-icon'

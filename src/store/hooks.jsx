@@ -44,6 +44,7 @@ export const useCurrentUser = () => {
     const logoutCurrentUser = () => {
         setter({});
         setLoggedIn(false);
+        localStorage.removeItem("token");
     };
     return {
         currentUser,
