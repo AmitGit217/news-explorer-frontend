@@ -73,6 +73,7 @@ export const useCurrentUser = () => {
             if (res.token) {
                 localStorage.setItem("token", res.token);
                 const user = await checkLocalToken(res.token);
+                console.log(user);
                 setCurrentUser(user);
                 return user;
             } else {

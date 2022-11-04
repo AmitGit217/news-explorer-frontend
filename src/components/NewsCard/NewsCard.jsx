@@ -1,6 +1,7 @@
 import React from "react";
 import "./NewsCard.css";
 import { useStore } from "../../store";
+import { useEffect } from "react";
 export default function NewsCard({
     title,
     text,
@@ -14,8 +15,11 @@ export default function NewsCard({
         useStore().currentUser;
     const realDate = new Date(date);
 
+    useEffect(() => {
+        getSavedCards();
+    }, []);
     const saveCard = async () => {
-        saveArticle({
+        const savedArticle = await saveArticle({
             title,
             text,
             date,
@@ -25,6 +29,7 @@ export default function NewsCard({
             link: currentCard.url,
         });
         getSavedCards();
+        return savedArticle;
     };
     const isSaved = savedCards.some((card) => card.title === currentCard.title);
     const disable = !isLoggedIn || isSaved;

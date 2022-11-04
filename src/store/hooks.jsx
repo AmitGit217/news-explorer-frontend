@@ -1,10 +1,5 @@
 import { useState } from "react";
-import {
-    checkToken,
-    deleteArticleById,
-    getUserArticles,
-    saveArticleToApi,
-} from "../utils/MainApi/MainApi.controller";
+
 import { getCardsFromApi } from "../utils/NewsApi/NewsApi.controller";
 
 export const usePopupWithFrom = () => {

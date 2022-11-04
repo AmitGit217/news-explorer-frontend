@@ -62,11 +62,12 @@ class UserActions {
     }
 }
 
+const token = localStorage.getItem("token");
 const userActionsApi = new UserActions({
     url: "https://news-api.eastus.cloudapp.azure.com",
     headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${token}`,
     },
 });
 
