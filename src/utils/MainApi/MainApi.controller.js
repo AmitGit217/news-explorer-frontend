@@ -1,4 +1,4 @@
-import userActionsApi from "./MainApi";
+import userActionsApi from "./MainApi.service";
 
 export const signup = async (values) => {
     try {
@@ -27,7 +27,7 @@ export const checkToken = async (token) => {
     }
 };
 
-export const saveArticle = async (article) => {
+export const saveArticleToApi = async (article) => {
     try {
         const res = await userActionsApi.saveArticle(article);
         return res;

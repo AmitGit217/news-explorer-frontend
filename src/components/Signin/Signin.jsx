@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useStore } from "../../store";
 import { useFormWithValidation } from "../../utils/helpHooks";
-import { signin } from "../../utils/MainApi/MainApi.actions";
+import { signin } from "../../utils/MainApi/MainApi.controller";
 
 export default function Signin() {
     const [error, setError] = useState("");

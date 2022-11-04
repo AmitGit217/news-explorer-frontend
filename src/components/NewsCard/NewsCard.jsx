@@ -1,8 +1,6 @@
 import React from "react";
 import "./NewsCard.css";
 import { useStore } from "../../store";
-import { saveArticle } from "../../utils/MainApi/MainApi.actions";
-
 export default function NewsCard({
     title,
     text,
@@ -11,8 +9,9 @@ export default function NewsCard({
     source,
     currentCard,
 }) {
-    const { search } = useStore().newsCards;
-    const { isLoggedIn, savedCards, getSavedCards } = useStore().currentUser;
+    const { keyword } = useStore().newsCards;
+    const { isLoggedIn, savedCards, getSavedCards, saveArticle } =
+        useStore().currentUser;
     const realDate = new Date(date);
 
     const saveCard = async () => {
@@ -22,8 +21,8 @@ export default function NewsCard({
             date,
             image,
             source,
+            keyword,
             link: currentCard.url,
-            keyword: search,
         });
         getSavedCards();
     };

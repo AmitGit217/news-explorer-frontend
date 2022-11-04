@@ -1,4 +1,4 @@
-import newsApi from "./NewsApi";
+import newsApi from "./NewsApi.service";
 
 export const getCardsFromApi = async (keyword) => {
     try {

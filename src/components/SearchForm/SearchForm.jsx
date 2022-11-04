@@ -2,28 +2,19 @@ import React from "react";
 import "./SearchForm.css";
 import { useStore } from "../../store";
 import { useState } from "react";
-import { getCardsFromApi } from "../../utils/NewsApi/NewsApi.actions";
 
 export default function SearchForm() {
     const [search, setKeyword] = useState("");
-    const { getCards, setNotFound, setIsLoading, removeIsLoading } =
-        useStore().newsCards;
+    const { getCards } = useStore().newsCards;
 
     const handleChange = (e) => {
         const { value, name } = e.target;
         setKeyword({ ...search, [name]: value });
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        setIsLoading();
-        const apiCards = await getCardsFromApi(search.keyword);
-        if (apiCards.length) {
-            getCards(apiCards, search.keyword);
-        } else {
-            setNotFound();
-        }
-        removeIsLoading();
+        getCards(search.keyword);
     };
 
     return (

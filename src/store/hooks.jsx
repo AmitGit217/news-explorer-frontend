@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { checkToken, getUserArticles } from "../utils/MainApi/MainApi.actions";
+import {
+    checkToken,
+    getUserArticles,
+    saveArticleToApi,
+} from "../utils/MainApi/MainApi.controller";
+import { getCardsFromApi } from "../utils/NewsApi/NewsApi.controller";
 
 export const usePopupWithFrom = () => {
     const [isPopupWithFormOpen, setPopupWithForm] = useState(false);
@@ -48,6 +53,15 @@ export const useCurrentUser = () => {
         localStorage.removeItem("token");
     };
 
+    const saveArticle = async (article) => {
+        try {
+            const res = await saveArticleToApi(article);
+            return res;
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
     const getSavedCards = async () => {
         const cards = await getUserArticles();
         if (!cards.message) {
@@ -64,40 +78,51 @@ export const useCurrentUser = () => {
         checkLocalToken,
         getSavedCards,
         savedCards,
+        saveArticle,
     };
 };
 
 export const useCards = () => {
-    const [search, setKeyword] = useState("");
-    const [notFound, setNotFoundFromApi] = useState(false);
-    const [isLoading, loadingSetter] = useState(false);
-    const [cards, setter] = useState([]);
+    const [keyword, setKeyword] = useState("");
+    const [notFound, setNotFound] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [cards, setCards] = useState([]);
 
-    const getCards = (apiCards, keyWord) => {
-        setter(apiCards);
-        setNotFoundFromApi(false);
-        setKeyword(keyWord);
-    };
-    const setNotFound = () => {
-        setNotFoundFromApi(true);
-        setter([]);
+    const _setNotFound = () => {
+        setNotFound(true);
+        setCards([]);
     };
 
-    const setIsLoading = () => {
-        loadingSetter(true);
-        setNotFoundFromApi(false);
-        setter([]);
+    const _setIsLoading = () => {
+        setIsLoading(true);
+        setNotFound(false);
+        setCards([]);
     };
-    const removeIsLoading = () => loadingSetter(false);
+    const _removeIsLoading = () => setIsLoading(false);
+
+    const getCards = async (keyWord) => {
+        _setIsLoading();
+        try {
+            const res = await getCardsFromApi(keyWord);
+            if (res.length) {
+                setCards(res);
+                setKeyword(keyWord);
+            } else {
+                _setNotFound();
+            }
+            return res;
+        } catch (err) {
+            return console.log(err);
+        } finally {
+            _removeIsLoading();
+        }
+    };
 
     return {
         cards,
         getCards,
         notFound,
-        setNotFound,
-        setIsLoading,
-        removeIsLoading,
         isLoading,
-        search,
+        keyword,
     };
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { deleteArticleById } from "../../utils/MainApi/MainApi.actions";
+import { deleteArticleById } from "../../utils/MainApi/MainApi.controller";
 import "./SavedNewsCard.css";
 import { useStore } from "../../store";
 
@@ -19,7 +19,6 @@ export default function SavedNewsCard({
         if (res._id) {
             getSavedCards();
         }
-        console.log(res);
     };
 
     return (

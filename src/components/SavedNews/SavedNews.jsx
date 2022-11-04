@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SavedNews.css";
 import SavedNewsCard from "../SavedNewsCard/SavedNewsCard";
 import { useStore } from "../../store";
@@ -6,19 +6,39 @@ import { useEffect } from "react";
 
 export default function SavedNews() {
     const { currentUser, savedCards, getSavedCards } = useStore().currentUser;
+    const [keywords, setKeywords] = useState([]);
 
     useEffect(() => {
-        getSavedCards();
+        const handleSavedCards = async () => {
+            await getSavedCards();
+            const newArr = savedCards.map((card) => card.keyword);
+            setKeywords([...new Set(newArr)]);
+        };
+        handleSavedCards();
     }, []);
 
     return (
         <section className='saved-news'>
             <div className='saved-news__text'>
                 <h2 className='saved-news__title'>Saved articles</h2>
-                <p className='saved-news__description'>{currentUser.name}</p>
+                <p className='saved-news__description'>
+                    {currentUser.name}, you have saved {savedCards.length}{" "}
+                    articles
+                </p>
                 <p className='saved-news__keywords'>
                     By keywords:{" "}
-                    <strong>Nature, Yellowstone, and 2 other</strong>
+                    <strong>
+                        {keywords?.slice(0, 2).map((word, index) => {
+                            return (
+                                <span key={index}>
+                                    {word}
+                                    {index + 1 < keywords.length && ","}{" "}
+                                </span>
+                            );
+                        })}
+                        {keywords.length > 2 &&
+                            `And ${keywords.length - 2} others`}
+                    </strong>
                 </p>
             </div>
             <ul className='saved-news__articles'>
