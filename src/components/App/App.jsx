@@ -17,7 +17,7 @@ export default function App() {
 
     useEffect(() => {
         checkLocalToken();
-    }, []);
+    }, [isLoggedIn]);
 
     return (
         <section className='app'>

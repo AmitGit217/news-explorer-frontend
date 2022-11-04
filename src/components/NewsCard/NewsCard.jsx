@@ -18,6 +18,7 @@ export default function NewsCard({
     useEffect(() => {
         getSavedCards();
     }, []);
+
     const saveCard = async () => {
         const savedArticle = await saveArticle({
             title,

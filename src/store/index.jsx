@@ -4,9 +4,9 @@ import {
     useUserRegistration,
     useMobileNav,
     useTooltip,
-    useCards,
 } from "./hooks";
 import { useCurrentUser } from "./user.hooks";
+import { useCards } from "./cards.hooks";
 
 const GlobalContext = createContext({});
 

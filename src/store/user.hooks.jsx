@@ -14,7 +14,6 @@ export const useCurrentUser = () => {
     const [savedCards, setCards] = useState([]);
     const setCurrentUser = (values) => {
         setUser({ ...values });
-        setLoggedIn(true);
     };
 
     const logoutCurrentUser = () => {
@@ -73,8 +72,8 @@ export const useCurrentUser = () => {
             if (res.token) {
                 localStorage.setItem("token", res.token);
                 const user = await checkLocalToken(res.token);
-                console.log(user);
                 setCurrentUser(user);
+                setLoggedIn(true);
                 return user;
             } else {
                 return res;

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { useStore } from "../../store";
 import { useFormWithValidation } from "../../utils/helpHooks";
 
@@ -15,6 +16,7 @@ export default function Signin() {
             const res = await signinUser(values);
             if (res._id) {
                 closePopup();
+                window.location.reload();
             } else {
                 setError(res.message);
                 setTimeout(() => {
