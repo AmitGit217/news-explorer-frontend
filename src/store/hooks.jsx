@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
     checkToken,
+    deleteArticleById,
     getUserArticles,
     saveArticleToApi,
 } from "../utils/MainApi/MainApi.controller";
@@ -32,54 +33,6 @@ export const useTooltip = () => {
     const openTooltip = () => setTooltip(true);
     const closeTooltip = () => setTooltip(false);
     return { isTooltipOpen, openTooltip, closeTooltip };
-};
-
-export const useCurrentUser = () => {
-    const [isLoggedIn, setLoggedIn] = useState(true);
-    const [currentUser, setter] = useState({});
-    const [savedCards, setCards] = useState([]);
-    const setCurrentUser = (values) => {
-        setter({ ...values });
-        setLoggedIn(true);
-    };
-
-    const checkLocalToken = async (token) => {
-        const res = await checkToken(token);
-        return res;
-    };
-    const logoutCurrentUser = () => {
-        setter({});
-        setLoggedIn(false);
-        localStorage.removeItem("token");
-    };
-
-    const saveArticle = async (article) => {
-        try {
-            const res = await saveArticleToApi(article);
-            return res;
-        } catch (err) {
-            console.log(err);
-        }
-    };
-
-    const getSavedCards = async () => {
-        const cards = await getUserArticles();
-        if (!cards.message) {
-            setCards(cards);
-        } else {
-            setCards([]);
-        }
-    };
-    return {
-        currentUser,
-        isLoggedIn,
-        setCurrentUser,
-        logoutCurrentUser,
-        checkLocalToken,
-        getSavedCards,
-        savedCards,
-        saveArticle,
-    };
 };
 
 export const useCards = () => {

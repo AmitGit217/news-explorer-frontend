@@ -13,20 +13,10 @@ import { useEffect } from "react";
 
 export default function App() {
     const popupToShow = useCurrentPopup();
-    const { isLoggedIn, checkLocalToken, setCurrentUser, logoutCurrentUser } =
-        useStore().currentUser;
+    const { isLoggedIn, checkLocalToken } = useStore().currentUser;
 
     useEffect(() => {
-        const getUserFromLocalHost = async () => {
-            const token = localStorage.getItem("token");
-            if (token) {
-                const res = await checkLocalToken(token);
-                setCurrentUser(res);
-            } else {
-                logoutCurrentUser();
-            }
-        };
-        getUserFromLocalHost();
+        checkLocalToken();
     }, []);
 
     return (

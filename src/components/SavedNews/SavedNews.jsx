@@ -9,13 +9,13 @@ export default function SavedNews() {
     const [keywords, setKeywords] = useState([]);
 
     useEffect(() => {
-        const handleSavedCards = async () => {
-            await getSavedCards();
-            const newArr = savedCards.map((card) => card.keyword);
-            setKeywords([...new Set(newArr)]);
-        };
-        handleSavedCards();
+        getSavedCards();
     }, []);
+
+    useEffect(() => {
+        const newArr = savedCards.map((card) => card.keyword);
+        setKeywords([...new Set(newArr)]);
+    }, [savedCards]);
 
     return (
         <section className='saved-news'>

@@ -12,14 +12,11 @@ export default function SavedNewsCard({
     keyword,
     currentCard,
 }) {
-    const { getSavedCards } = useStore().currentUser;
+    const { getSavedCards, deleteCardById } = useStore().currentUser;
 
-    const deleteCard = async () => {
-        const res = await deleteArticleById(currentCard._id);
-        if (res._id) {
-            getSavedCards();
-        }
-    };
+    // const deleteCard = async () => {
+    //     deleteCardById();
+    // };
 
     return (
         <article className='saved-news-card'>
@@ -33,7 +30,7 @@ export default function SavedNewsCard({
             <span className='saved-news-card__trash'>
                 <button
                     type='button'
-                    onClick={deleteCard}
+                    onClick={() => deleteCardById(currentCard._id)}
                     className='saved-news-card__trash-image'
                 />
                 <p className='saved-news-card__remove-popup'>
