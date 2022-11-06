@@ -63,5 +63,6 @@
     .saved-news__articles {
         display: flex;
         flex-direction: column;
+        padding: 15px 0;
     }
 }

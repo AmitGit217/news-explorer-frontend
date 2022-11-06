@@ -18,47 +18,62 @@ export default function SavedNews() {
     }, [savedCards]);
 
     return (
-        <section className='saved-news'>
-            <div className='saved-news__text'>
-                <h2 className='saved-news__title'>Saved articles</h2>
-                <p className='saved-news__description'>
-                    {currentUser.name}, you have saved {savedCards.length}{" "}
-                    articles
-                </p>
-                <p className='saved-news__keywords'>
-                    By keywords:{" "}
-                    <strong>
-                        {keywords?.slice(0, 2).map((word, index) => {
+        <>
+            {keywords.length >= 1 ? (
+                <section className='saved-news'>
+                    <div className='saved-news__text'>
+                        <h2 className='saved-news__title'>Saved articles</h2>
+                        <p className='saved-news__description'>
+                            {currentUser.name}, you have saved{" "}
+                            {savedCards.length} articles
+                        </p>
+                        <p className='saved-news__keywords'>
+                            By keywords:{" "}
+                            <strong>
+                                {keywords?.slice(0, 2).map((word, index) => {
+                                    return (
+                                        <span key={index}>
+                                            {word}
+                                            {index + 1 < keywords.length &&
+                                                ","}{" "}
+                                        </span>
+                                    );
+                                })}
+                                {keywords.length > 2 &&
+                                    `And ${keywords.length - 2} others`}
+                            </strong>
+                        </p>
+                    </div>
+                    <ul className='saved-news__articles'>
+                        {savedCards?.map((article, index) => {
                             return (
-                                <span key={index}>
-                                    {word}
-                                    {index + 1 < keywords.length && ","}{" "}
-                                </span>
+                                <li key={index}>
+                                    <SavedNewsCard
+                                        isSaved={true}
+                                        image={article.image}
+                                        date={article.date}
+                                        title={article.title}
+                                        text={article.text}
+                                        source={article.source}
+                                        keyword={article.keyword}
+                                        currentCard={article}
+                                    />
+                                </li>
                             );
                         })}
-                        {keywords.length > 2 &&
-                            `And ${keywords.length - 2} others`}
-                    </strong>
-                </p>
-            </div>
-            <ul className='saved-news__articles'>
-                {savedCards?.map((article, index) => {
-                    return (
-                        <li key={index}>
-                            <SavedNewsCard
-                                isSaved={true}
-                                image={article.image}
-                                date={article.date}
-                                title={article.title}
-                                text={article.text}
-                                source={article.source}
-                                keyword={article.keyword}
-                                currentCard={article}
-                            />
-                        </li>
-                    );
-                })}
-            </ul>
-        </section>
+                    </ul>
+                </section>
+            ) : (
+                <section className='saved-news'>
+                    <div className='saved-news__text'>
+                        <h2 className='saved-news__title'>Saved articles</h2>
+                        <p className='saved-news__description'>
+                            {currentUser.name}, you have saved{" "}
+                            {savedCards.length} articles
+                        </p>
+                    </div>
+                </section>
+            )}
+        </>
     );
 }
