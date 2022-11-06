@@ -8,7 +8,6 @@ import {
 } from "../utils/MainApi/MainApi.controller";
 
 export const useCurrentUser = () => {
-    // const [savedKeywords, setKeywords] = useState([]);
     const [isLoggedIn, setLoggedIn] = useState(true);
     const [currentUser, setUser] = useState({});
     const [savedCards, setCards] = useState([]);
