@@ -1,5 +1,4 @@
 import React from "react";
-import { deleteArticleById } from "../../utils/MainApi/MainApi.controller";
 import "./SavedNewsCard.css";
 import { useStore } from "../../store";
 
@@ -12,11 +11,7 @@ export default function SavedNewsCard({
     keyword,
     currentCard,
 }) {
-    const { getSavedCards, deleteCardById } = useStore().currentUser;
-
-    // const deleteCard = async () => {
-    //     deleteCardById();
-    // };
+    const { deleteCardById } = useStore().currentUser;
 
     return (
         <article className='saved-news-card'>

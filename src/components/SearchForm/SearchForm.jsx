@@ -5,6 +5,7 @@ import { useState } from "react";
 
 export default function SearchForm() {
     const [search, setKeyword] = useState("");
+    const { getSavedCards } = useStore().currentUser;
     const { getCards } = useStore().newsCards;
 
     const handleChange = (e) => {
@@ -14,6 +15,7 @@ export default function SearchForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        getSavedCards();
         getCards(search.keyword);
     };
 

@@ -1,11 +1,5 @@
 import { useState } from "react";
-import {
-    checkToken,
-    deleteArticleById,
-    getUserArticles,
-    saveArticleToApi,
-    signin,
-} from "../utils/MainApi/MainApi.controller";
+import userActionsApi from "../utils/MainApi/MainApi.service";
 
 export const useCurrentUser = () => {
     const [isLoggedIn, setLoggedIn] = useState(true);
@@ -25,7 +19,7 @@ export const useCurrentUser = () => {
         try {
             const token = localStorage.getItem("token");
             if (token) {
-                const user = await checkToken(token);
+                const user = await userActionsApi.checkToken(token);
                 setUser(user);
                 return user;
             } else {
@@ -38,7 +32,7 @@ export const useCurrentUser = () => {
 
     const saveArticle = async (article) => {
         try {
-            const res = await saveArticleToApi(article);
+            const res = await userActionsApi.saveArticle(article);
             return res;
         } catch (err) {
             console.log(err);
@@ -46,17 +40,23 @@ export const useCurrentUser = () => {
     };
 
     const getSavedCards = async () => {
-        const cards = await getUserArticles();
-        if (!cards.message) {
-            setCards(cards);
-        } else {
-            setCards([]);
+        try {
+            const cards = await userActionsApi.getUserArticles();
+            if (!cards.message) {
+                setCards(cards);
+                return;
+            } else {
+                setCards([]);
+                return;
+            }
+        } catch (err) {
+            console.log(err);
         }
     };
 
     const deleteCardById = async (id) => {
         try {
-            const res = await deleteArticleById(id);
+            const res = await userActionsApi.deleteArticleById(id);
             if (res._id) {
                 getSavedCards();
             }
@@ -67,7 +67,7 @@ export const useCurrentUser = () => {
 
     const signinUser = async (values) => {
         try {
-            const res = await signin(values);
+            const res = await userActionsApi.signin(values);
             if (res.token) {
                 localStorage.setItem("token", res.token);
                 const user = await checkLocalToken(res.token);

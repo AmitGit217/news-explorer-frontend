@@ -1,7 +1,7 @@
 import React from "react";
 import "./NewsCard.css";
 import { useStore } from "../../store";
-import { useEffect } from "react";
+
 export default function NewsCard({
     title,
     text,
@@ -14,10 +14,6 @@ export default function NewsCard({
     const { isLoggedIn, savedCards, getSavedCards, saveArticle } =
         useStore().currentUser;
     const realDate = new Date(date);
-
-    useEffect(() => {
-        getSavedCards();
-    }, []);
 
     const saveCard = async () => {
         const savedArticle = await saveArticle({

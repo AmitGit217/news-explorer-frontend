@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useStore } from "../../store";
 import { useFormWithValidation } from "../../utils/helpHooks";
-import { signup } from "../../utils/MainApi/MainApi.controller";
+import userActionsApi from "../../utils/MainApi/MainApi.service";
 
 export default function Signup() {
     const { openTooltip } = useStore().tooltip;
@@ -14,7 +14,7 @@ export default function Signup() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const res = await signup(values);
+        const res = await userActionsApi.signup(values);
         if (!res.message) {
             openTooltip();
             return;

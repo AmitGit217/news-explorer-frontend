@@ -1,6 +1,5 @@
 import { useState } from "react";
-
-import { getCardsFromApi } from "../utils/NewsApi/NewsApi.controller";
+import newsApi from "../utils/NewsApi/NewsApi.service";
 export const useCards = () => {
     const [keyword, setKeyword] = useState("");
     const [notFound, setNotFound] = useState(false);
@@ -22,9 +21,10 @@ export const useCards = () => {
     const getCards = async (keyWord) => {
         _setIsLoading();
         try {
-            const res = await getCardsFromApi(keyWord);
-            if (res.length) {
-                setCards(res);
+            const res = await newsApi.getArticles(keyWord);
+            console.log(res);
+            if (res.articles) {
+                setCards(res.articles);
                 setKeyword(keyWord);
             } else {
                 _setNotFound();
