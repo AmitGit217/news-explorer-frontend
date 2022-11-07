@@ -1,5 +1,5 @@
 import { useState } from "react";
-import userActionsApi from "../utils/MainApi/MainApi.service";
+import userActionsApi from "../../utils/MainApi/MainApi.service";
 
 export const useCurrentUser = () => {
     const [isLoggedIn, setLoggedIn] = useState(true);

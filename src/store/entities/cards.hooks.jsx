@@ -1,5 +1,5 @@
 import { useState } from "react";
-import newsApi from "../utils/NewsApi/NewsApi.service";
+import newsApi from "../../utils/NewsApi/NewsApi.service";
 export const useCards = () => {
     const [keyword, setKeyword] = useState("");
     const [notFound, setNotFound] = useState(false);

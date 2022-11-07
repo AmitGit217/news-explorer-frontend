@@ -5,8 +5,8 @@ import {
     useMobileNav,
     useTooltip,
 } from "./hooks";
-import { useCurrentUser } from "./user.hooks";
-import { useCards } from "./cards.hooks";
+import { useCurrentUser } from "./entities/user.hooks";
+import { useCards } from "./entities/cards.hooks";
 
 const GlobalContext = createContext({});
 
