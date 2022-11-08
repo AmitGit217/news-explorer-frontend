@@ -28,7 +28,7 @@ class NewsApi {
 }
 
 const newsApi = new NewsApi({
-    url: "https://newsapi.org/v2/everything",
+    url: "https://nomoreparties.co/news/v2/everything",
     key: "b0318af0f80441c6927025c32587781d",
 });
 
