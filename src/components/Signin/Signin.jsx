@@ -37,7 +37,7 @@ export default function Signin() {
                         Email:
                         <input
                             name='email'
-                            defaultValue={values.email || ""}
+                            value={values.email || ""}
                             className='popup__form-input'
                             type='email'
                             placeholder='Enter email'
@@ -52,7 +52,7 @@ export default function Signin() {
                         Password:
                         <input
                             name='password'
-                            defaultValue={values.password || ""}
+                            value={values.password || ""}
                             placeholder='Enter password'
                             className='popup__form-input'
                             type='password'

@@ -4,7 +4,7 @@ import { useStore } from "../../store";
 import { useState } from "react";
 
 export default function SearchForm() {
-    const [search, setKeyword] = useState("");
+    const [search, setKeyword] = useState();
     const { getSavedCards } = useStore().currentUser;
     const { getCards } = useStore().newsCards;
 
@@ -36,6 +36,7 @@ export default function SearchForm() {
                     type='text'
                     placeholder='Enter topic'
                     name='keyword'
+                    value={search || ""}
                     onChange={handleChange}
                 />
                 <button className='search-form__search-button' type='submit'>
