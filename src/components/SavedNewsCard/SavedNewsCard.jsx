@@ -1,5 +1,6 @@
 import React from "react";
 import "./SavedNewsCard.css";
+import { useStore } from "../../store";
 
 export default function SavedNewsCard({
     title,
@@ -8,7 +9,10 @@ export default function SavedNewsCard({
     image,
     source,
     keyword,
+    currentCard,
 }) {
+    const { deleteCardById } = useStore().currentUser;
+
     return (
         <article className='saved-news-card'>
             <img className='saved-news-card__image' src={image} alt={title} />
@@ -21,6 +25,7 @@ export default function SavedNewsCard({
             <span className='saved-news-card__trash'>
                 <button
                     type='button'
+                    onClick={() => deleteCardById(currentCard._id)}
                     className='saved-news-card__trash-image'
                 />
                 <p className='saved-news-card__remove-popup'>

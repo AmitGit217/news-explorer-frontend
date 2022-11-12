@@ -1,7 +1,24 @@
 import React from "react";
 import "./SearchForm.css";
+import { useStore } from "../../store";
+import { useState } from "react";
 
 export default function SearchForm() {
+    const [search, setKeyword] = useState("");
+    const { getSavedCards } = useStore().currentUser;
+    const { getCardsByKeyWord } = useStore().newsCards;
+
+    function handleChange(e) {
+        const { value } = e.target;
+        setKeyword(value);
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        getSavedCards();
+        getCardsByKeyWord(search);
+    }
+
     return (
         <section className='search-form'>
             <div className='search-form__text'>
@@ -13,11 +30,14 @@ export default function SearchForm() {
                     personal account.
                 </h2>
             </div>
-            <form className='search-form__search'>
+            <form className='search-form__search' onSubmit={handleSubmit}>
                 <input
                     className='search-form__search-text'
                     type='text'
                     placeholder='Enter topic'
+                    name='keyword'
+                    value={search || ""}
+                    onChange={handleChange}
                 />
                 <button className='search-form__search-button' type='submit'>
                     Search

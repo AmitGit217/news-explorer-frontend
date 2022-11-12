@@ -70,6 +70,10 @@
     height: 56px;
     width: 288px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
 }
 
 .popup-nav__exit {
