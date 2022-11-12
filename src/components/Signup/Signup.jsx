@@ -35,7 +35,7 @@ export default function Signup() {
                         <input
                             name='email'
                             onChange={handleChange}
-                            value={values.email || ""}
+                            defaultValue={values.email || ""}
                             placeholder='Enter email'
                             className='popup__form-input'
                             type='email'
@@ -49,7 +49,7 @@ export default function Signup() {
                         Password:
                         <input
                             name='password'
-                            value={values.password || ""}
+                            defaultValue={values.password || ""}
                             onChange={handleChange}
                             placeholder='Enter password'
                             className='popup__form-input'
@@ -64,7 +64,7 @@ export default function Signup() {
                         Username:
                         <input
                             name='name'
-                            value={values.name || ""}
+                            defaultValue={values.name || ""}
                             onChange={handleChange}
                             placeholder='Enter your username'
                             className='popup__form-input'

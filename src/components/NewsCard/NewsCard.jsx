@@ -11,8 +11,13 @@ export default function NewsCard({
     currentCard,
 }) {
     const { keyword } = useStore().newsCards;
-    const { isLoggedIn, savedCards, getSavedCards, saveArticle } =
-        useStore().currentUser;
+    const {
+        isLoggedIn,
+        savedCards,
+        getSavedCards,
+        saveArticle,
+        deleteCardById,
+    } = useStore().currentUser;
     const realDate = new Date(date);
 
     const saveCard = async () => {
@@ -28,8 +33,16 @@ export default function NewsCard({
         getSavedCards();
         return savedArticle;
     };
+
+    const removeCardFromSavedArray = (currentCard) => {
+        const cardToRemove = savedCards.find(
+            (card) => card.image === currentCard.urlToImage
+        );
+        deleteCardById(cardToRemove._id);
+    };
+
     const isSaved = savedCards.some((card) => card.title === currentCard.title);
-    const disable = !isLoggedIn || isSaved;
+    const disable = !isLoggedIn;
 
     return (
         <article className='news-card'>
@@ -42,7 +55,11 @@ export default function NewsCard({
             </div>
             <span className='news-card__archive'>
                 <button
-                    onClick={saveCard}
+                    onClick={
+                        isSaved
+                            ? () => removeCardFromSavedArray(currentCard)
+                            : saveCard
+                    }
                     type='button'
                     disabled={disable}
                     className={` ${
