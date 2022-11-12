@@ -5,14 +5,15 @@ export const useCurrentUser = () => {
     const [isLoggedIn, setLoggedIn] = useState(true);
     const [currentUser, setUser] = useState({});
     const [savedCards, setCards] = useState([]);
-    const setCurrentUser = (values) => {
-        setUser({ ...values });
-    };
 
     const logoutCurrentUser = () => {
         setUser({});
         setLoggedIn(false);
         localStorage.removeItem("token");
+        setCards([]);
+    };
+    const setCurrentUser = (values) => {
+        setUser({ ...values });
     };
 
     const checkLocalToken = async () => {
@@ -81,6 +82,7 @@ export const useCurrentUser = () => {
             console.log(err);
         }
     };
+
     return {
         currentUser,
         isLoggedIn,

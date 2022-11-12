@@ -22,7 +22,6 @@ export const useCards = () => {
         _setIsLoading();
         try {
             const res = await newsApi.getArticles(keyWord);
-            console.log(res);
             if (res.articles) {
                 setCards(res.articles);
                 setKeyword(keyWord);
