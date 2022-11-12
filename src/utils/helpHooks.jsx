@@ -9,6 +9,7 @@ export const useCloseFromEsc = (setter) => {
     useEffect(() => {
         const closeFromEsc = (e) => e.key === "Escape" && setter(false);
         document.addEventListener("keydown", closeFromEsc);
+        return () => document.removeEventListener("keydown", closeFromEsc);
     }, [setter]);
 };
 
