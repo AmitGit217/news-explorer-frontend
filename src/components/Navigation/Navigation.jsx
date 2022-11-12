@@ -11,22 +11,22 @@ export default function Navigation() {
     const { openPopup } = useStore().popupWithForm;
     const { isMobileNavOpen, closeMobileNav } = useStore().mobileNav;
 
-    const openFormPopup = () => {
+    function openFormPopup() {
         openPopup();
         closeMobileNav();
-    };
-    const backHome = () => {
+    }
+    function backHome() {
         navigate("/");
         closeMobileNav();
-    };
-    const goToSavedArticlesPage = () => {
+    }
+    function goToSavedArticlesPage() {
         closeMobileNav();
         navigate("/saved-news");
-    };
-    const logout = () => {
+    }
+    function logout() {
         logoutCurrentUser();
         closeMobileNav();
-    };
+    }
 
     return (
         <div className={`popup-nav ${isMobileNavOpen && "popup-nav_show"}`}>

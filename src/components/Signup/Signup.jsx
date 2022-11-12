@@ -12,7 +12,7 @@ export default function Signup() {
     });
     const { values, handleChange, errors, isValid } = useFormWithValidation();
 
-    const handleSubmit = async (e) => {
+    async function handleSubmit(e) {
         e.preventDefault();
         const res = await userActionsApi.signup(values);
         if (!res.message) {
@@ -23,7 +23,7 @@ export default function Signup() {
         setTimeout(() => {
             setDataExist({ exist: false, message: "" });
         }, 2000);
-    };
+    }
 
     return (
         <>

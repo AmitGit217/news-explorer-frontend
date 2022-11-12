@@ -8,16 +8,16 @@ export default function SearchForm() {
     const { getSavedCards } = useStore().currentUser;
     const { getCards } = useStore().newsCards;
 
-    const handleChange = (e) => {
+    function handleChange(e) {
         const { value, name } = e.target;
         setKeyword({ ...search, [name]: value });
-    };
+    }
 
-    const handleSubmit = (e) => {
+    function handleSubmit(e) {
         e.preventDefault();
         getSavedCards();
         getCards(search.keyword);
-    };
+    }
 
     return (
         <section className='search-form'>

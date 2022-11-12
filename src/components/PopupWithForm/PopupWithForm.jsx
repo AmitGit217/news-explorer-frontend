@@ -8,13 +8,13 @@ export default function PopupWithForm({ children }) {
     const { setRegisteredTrue } = useStore().userRegistration;
     const { closeTooltip } = useStore().tooltip;
 
-    const closePopupWithForm = () => {
+    function closePopupWithForm() {
         closePopup();
         setTimeout(() => {
             closeTooltip();
             setRegisteredTrue();
         }, 200);
-    };
+    }
     useCloseFromEsc(closePopup);
 
     return (

@@ -20,7 +20,7 @@ export default function NewsCard({
     } = useStore().currentUser;
     const realDate = new Date(date);
 
-    const saveCard = async () => {
+    async function saveCard() {
         const savedArticle = await saveArticle({
             title,
             text,
@@ -32,14 +32,14 @@ export default function NewsCard({
         });
         getSavedCards();
         return savedArticle;
-    };
+    }
 
-    const removeCardFromSavedArray = (currentCard) => {
+    function removeCardFromSavedArray(currentCard) {
         const cardToRemove = savedCards.find(
             (card) => card.image === currentCard.urlToImage
         );
         deleteCardById(cardToRemove._id);
-    };
+    }
 
     const isSaved = savedCards.some((card) => card.title === currentCard.title);
     const disable = !isLoggedIn;

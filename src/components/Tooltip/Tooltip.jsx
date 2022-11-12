@@ -4,10 +4,11 @@ import { useStore } from "../../store";
 export default function Tooltip() {
     const { closeTooltip } = useStore().tooltip;
     const { setRegisteredTrue } = useStore().userRegistration;
-    const navigateToForm = () => {
+
+    function navigateToForm() {
         closeTooltip();
         setRegisteredTrue();
-    };
+    }
 
     return (
         <>

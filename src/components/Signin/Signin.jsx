@@ -10,7 +10,7 @@ export default function Signin() {
     const { closePopup } = useStore().popupWithForm;
     const { values, handleChange, errors, isValid } = useFormWithValidation();
 
-    const handleSubmit = async (e) => {
+    async function handleSubmit(e) {
         e.preventDefault();
         try {
             const res = await signinUser(values);
@@ -26,7 +26,7 @@ export default function Signin() {
         } catch (err) {
             console.log(err);
         }
-    };
+    }
 
     return (
         <>
