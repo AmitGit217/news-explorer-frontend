@@ -18,7 +18,7 @@ export const useCards = () => {
     };
     const _removeIsLoading = () => setIsLoading(false);
 
-    const getCards = async (keyWord) => {
+    const getCardsByKeyWord = async (keyWord) => {
         _setIsLoading();
         try {
             const res = await newsApi.getArticles(keyWord);
@@ -38,7 +38,7 @@ export const useCards = () => {
 
     return {
         cards,
-        getCards,
+        getCardsByKeyWord,
         notFound,
         isLoading,
         keyword,
