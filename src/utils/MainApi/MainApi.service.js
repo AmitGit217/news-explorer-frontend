@@ -8,8 +8,9 @@ class UserActions {
         const res = await fetch(url, headers);
         if (res) {
             return res.json();
+        } else {
+            return await Promise.reject(`Error: ${res.status}`);
         }
-        return await Promise.reject(`Error: ${res.status}`);
     }
 
     signup(values) {
