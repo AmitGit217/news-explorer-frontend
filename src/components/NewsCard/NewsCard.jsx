@@ -18,6 +18,7 @@ export default function NewsCard({
         saveArticle,
         deleteCardById,
     } = useStore().currentUser;
+    const { openPopup } = useStore().popupWithForm;
     const realDate = new Date(date);
 
     async function saveCard() {
@@ -41,8 +42,19 @@ export default function NewsCard({
         deleteCardById(cardToRemove._id);
     }
 
+    async function handleSaveAuth(currentCardClicked) {
+        if (isLoggedIn) {
+            if (isSaved) {
+                removeCardFromSavedArray(currentCardClicked);
+            } else {
+                saveCard();
+            }
+        } else {
+            openPopup();
+        }
+    }
+
     const isSaved = savedCards.some((card) => card.title === currentCard.title);
-    const disable = !isLoggedIn;
 
     return (
         <article className='news-card'>
@@ -55,13 +67,8 @@ export default function NewsCard({
             </div>
             <span className='news-card__archive'>
                 <button
-                    onClick={
-                        isSaved
-                            ? () => removeCardFromSavedArray(currentCard)
-                            : saveCard
-                    }
+                    onClick={() => handleSaveAuth(currentCard)}
                     type='button'
-                    disabled={disable}
                     className={` ${
                         isSaved
                             ? "news-card__archive-image_saved"
