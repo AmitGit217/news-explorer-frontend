@@ -6,7 +6,7 @@ class NewsApi {
     }
     async _connect(url) {
         const res = await fetch(url);
-        if (res) {
+        if (res.ok) {
             return res.json();
         }
         return await Promise.reject(`Error: ${res.status}`);
