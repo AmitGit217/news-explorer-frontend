@@ -58,9 +58,11 @@ export const useCurrentUser = () => {
     const deleteCardById = async (id) => {
         try {
             const res = await userActionsApi.deleteArticleById(id);
-            if (res._id) {
-                getSavedCards();
-            }
+            const newSavedCardsArr = savedCards.filter(
+                (card) => card._id !== res._id
+            );
+            setCards(newSavedCardsArr);
+            return res;
         } catch (err) {
             console.log(err);
         }

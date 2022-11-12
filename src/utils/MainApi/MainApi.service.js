@@ -6,7 +6,7 @@ class UserActions {
 
     async _connect(url, headers) {
         const res = await fetch(url, headers);
-        if (res) {
+        if (res.ok) {
             return res.json();
         } else {
             return await Promise.reject(`Error: ${res.status}`);

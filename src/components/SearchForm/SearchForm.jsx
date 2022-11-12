@@ -4,19 +4,19 @@ import { useStore } from "../../store";
 import { useState } from "react";
 
 export default function SearchForm() {
-    const [search, setKeyword] = useState();
+    const [search, setKeyword] = useState("");
     const { getSavedCards } = useStore().currentUser;
     const { getCards } = useStore().newsCards;
 
     function handleChange(e) {
-        const { value, name } = e.target;
-        setKeyword({ ...search, [name]: value });
+        const { value } = e.target;
+        setKeyword(value);
     }
 
     function handleSubmit(e) {
         e.preventDefault();
         getSavedCards();
-        getCards(search.keyword);
+        getCards(search);
     }
 
     return (

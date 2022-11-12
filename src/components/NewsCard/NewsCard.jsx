@@ -42,7 +42,7 @@ export default function NewsCard({
         deleteCardById(cardToRemove._id);
     }
 
-    async function handleSaveAuth(currentCardClicked) {
+    function handleSaveAuth(currentCardClicked) {
         if (isLoggedIn) {
             if (isSaved) {
                 removeCardFromSavedArray(currentCardClicked);
