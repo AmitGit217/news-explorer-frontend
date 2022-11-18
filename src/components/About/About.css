@@ -10,6 +10,11 @@
     row-gap: 24px;
     max-width: 600px;
 }
+.about__image {
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+}
 
 .about__title {
     all: unset;
